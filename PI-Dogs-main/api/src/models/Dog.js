@@ -32,6 +32,7 @@ module.exports = (sequelize) => {
     },
     temperament:{
       type:DataTypes.STRING,
+      
     },
     origin:{
       type:DataTypes.STRING,
