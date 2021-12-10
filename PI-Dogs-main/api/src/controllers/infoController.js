@@ -7,7 +7,7 @@ const { Temperament } = require( '../db');
 /*------------INFO API------------------------------*/
 const reqApi= async function getApi(){
     const apiInfo = await axios.get(`https://api.thedogapi.com/v1/breeds?api_key=${API_KEY}`)
-                   apiInfo.data.map((e) => {
+        const getInfo=await apiInfo.data.map((e) => {
 
       Dog.findOrCreate({
         where: {
@@ -15,25 +15,13 @@ const reqApi= async function getApi(){
           name: e.name,
           height: e.height.metric,
           weight: e.weight.metric,
+          breed_group:e.breed_group,
           life_span: e.life_span,
           image: e.image.url
        }
       })
-
-
-
-    // return {
-     
-    //   id: e.id,
-    //   name: e.name,
-    //   weight: e.weight.metric,
-    //   height: e.height.metric,
-    //   breed_group:e.breed_group,
-    //   lifeSpan: e.life_span,
-    //   img: e.image.url,
-    // };
   });
-  return apiInfo.data;
+  return getInfo;
 };
 
 /*---------------INFO DATABASE------------*/
