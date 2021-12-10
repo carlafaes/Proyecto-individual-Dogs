@@ -16,9 +16,11 @@ module.exports = (sequelize) => {
     },
     weight:{
       type:DataTypes.STRING,
+      allowNull:false,
     },
     height:{
       type:DataTypes.STRING,
+      allowNull:false,
     },
     breed_group:{
       type:DataTypes.STRING,
