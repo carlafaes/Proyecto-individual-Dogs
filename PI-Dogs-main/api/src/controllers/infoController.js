@@ -28,7 +28,9 @@ module.exports = async function getDbInfo(){
     include:{
       model: Temperament,
       attributes: ['id','name'],
-      through:[],
+      through:{
+        attributes:[],
+      }
     }
   })
 }
