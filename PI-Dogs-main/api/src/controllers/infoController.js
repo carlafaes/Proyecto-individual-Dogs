@@ -16,7 +16,7 @@ const reqApi= async function getApi(){
           height: e.height.metric,
           weight: e.weight.metric,
           life_span: e.life_span,
-          image: e.image.url,
+          image: e.image.url
        }
       })
 
