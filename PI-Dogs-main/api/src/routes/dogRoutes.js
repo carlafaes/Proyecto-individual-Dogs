@@ -15,20 +15,29 @@ const reqApi= async function getApi(){
           
             const reqApi = await axios.get(`https://api.thedogapi.com/v1/breeds?api_key=${API_KEY}`)
            // console.log(reqApi)
-             const componenteInfo= await reqApi.data.map((e) => {
+             //const componenteInfo= await reqApi.data.map((e) => {
         
-            return {
-                id: e.id,
-                name: e.name,
-                height: e.height.metric,
-                weight: e.weight.metric,
-                life_span: e.life_span,
-                image: e.image.url
-            }
-         })
+            //return {
+              reqApi.data.map((e)=>{
+                Dog.findOrCreate({
+                    where:{
+                        id: e.id,
+                        name: e.name,
+                        height: e.height.metric,
+                        weight: e.weight.metric,
+                        life_span: e.life_span,
+                        image: e.image.url
+                    }
+                   
+                   })    
+                   
+                 })
+            
+           // }
+        // })
         // console.log(componenteInfo);
          //console.log(reqApi.data);
-            return componenteInfo;
+           return reqApi;
     };
   
     /*------INFO DB-----------------------------------*/
