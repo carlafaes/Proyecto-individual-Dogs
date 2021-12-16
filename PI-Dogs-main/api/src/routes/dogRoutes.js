@@ -86,36 +86,37 @@ const reqApi= async function getApi(){
 
     
 
-    // router.post('/m', async(req,res,next)=>{
-    //     try{
-    //         var {name,height_min, height_max,weight_min,weight_max,life_span,image,temperament,createdInDb}= req.body;
-    //         res.send({name,height_min, height_max,weight_min,weight_max,life_span,image,temperament,createdInDb})
-    //         // const createDog= await Dog.create({
-    //         //     name,
-    //         //     height_min,
-    //         //     height_max,
-    //         //     weight_min,
-    //         //     weight_max,
-    //         //     life_span,
-    //         //     image,
-    //         //     createdInDb
-    //         // })
+    router.post('/m', async(req,res,next)=>{
+        try{
+            var {name,height_min, height_max,weight_min,weight_max,life_span,image,temperament,createdInDb}= req.body;
+            if (!name || !height || !weight)
+             return res.status(404).send("The name, height and weight are required");
+            const createDog= await Dog.create({
+                name,
+                height_min,
+                height_max,
+                weight_min,
+                weight_max,
+                life_span,
+                image,
+                createdInDb
+            })
 
-    //         // temperament.map(async (e) =>{
-    //         //     const temperamentDb= await Temperament.findAll({
-    //         //         where:{
-    //         //             name : e,
-    //         //         },
-    //         //         include:[Dog]
-    //         //     })
-    //         //     createDog.addTemperament(temperamentDb)
-    //         // })
-    //         // res.status(200).send(createDog)
-    //     }
-    //     catch(err){
-    //         next(err)
-    //     }
-    // })
+            temperament.map(async (e) =>{
+                const temperamentDb= await Temperament.findAll({
+                    where:{
+                        name : e,
+                    },
+                    include:[Dog]
+                })
+                createDog.addTemperament(temperamentDb)
+            })
+            res.status(200).send(createDog)
+        }
+        catch(err){
+            next(err)
+        }
+    })
 
     router.get('/:id', async(req,res,next)=>{
         try{
@@ -148,27 +149,27 @@ const reqApi= async function getApi(){
     })
 
 
-    router.post("/m", async (req, res) => {
-        try{
-          const { name, height, weight, lifeSpan, createdInDb, temperament } = req.body;
-          if (!name || !height || !weight)
-            return res.status(404).send("The name, height and weight are required");
-          const createdDog = await Dog.create({
-            name,
-            height,
-            weight,
-            lifeSpan,
-            /* temperament, */
-            /* createdInDb, */
-          });
-          await createdDog.setTemperaments(temperament);
-          return res.status(200).send("The dog has been successfully created");
-        }
+    // router.post("/m", async (req, res) => {
+    //     try{
+    //       const { name, height, weight, lifeSpan, createdInDb, temperament } = req.body;
+    //       if (!name || !height || !weight)
+    //         return res.status(404).send("The name, height and weight are required");
+    //       const createdDog = await Dog.create({
+    //         name,
+    //         height,
+    //         weight,
+    //         lifeSpan,
+    //         /* temperament, */
+    //         /* createdInDb, */
+    //       });
+    //       await createdDog.setTemperaments(temperament);
+    //       return res.status(200).send("The dog has been successfully created");
+    //     }
       
-        catch(err){
-          console.log(err)
-          res.status(404).json(err)
-        }
-    })
+    //     catch(err){
+    //       console.log(err)
+    //       res.status(404).json(err)
+    //     }
+    // })
 
         module.exports = router;

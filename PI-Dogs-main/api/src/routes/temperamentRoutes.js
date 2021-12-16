@@ -3,7 +3,7 @@ const axios= require('axios');
 const {API_KEY}=process.env;
 const {Temperament}= require ('../db');
 
-router.get('/', async(req,res,next)=>{
+router.get('/t', async(req,res,next)=>{
     try{
         let arrTemp= [];
         let concatArr= [];
