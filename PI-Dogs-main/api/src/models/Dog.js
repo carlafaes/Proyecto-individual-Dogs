@@ -14,19 +14,11 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    weight_min:{
+    weight:{
       type:DataTypes.STRING,
       allowNull:false,
     },
-    weight_max:{
-      type:DataTypes.STRING,
-      allowNull:false,
-    },
-    height_min:{
-      type:DataTypes.STRING,
-      allowNull:false,
-    },
-    height_max:{
+    height:{
       type:DataTypes.STRING,
       allowNull:false,
     },
@@ -38,8 +30,8 @@ module.exports = (sequelize) => {
     },
     createdInDb: {           //para distinguir entre los que me trae la api y los creados en la base de datos
       type: DataTypes.BOOLEAN,
-      allowNull: false,
-      defaultValue: true,
+      //allowNull: false,
+      defaultValue: false,
     }
   });
 };
