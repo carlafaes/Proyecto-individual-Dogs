@@ -36,5 +36,10 @@ module.exports = (sequelize) => {
     image:{
       type:DataTypes.STRING,
     },
+    createdInDb: {           //para distinguir entre los que me trae la api y los creados en la base de datos
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: true,
+    }
   });
 };

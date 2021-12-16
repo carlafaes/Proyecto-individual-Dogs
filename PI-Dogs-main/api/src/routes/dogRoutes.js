@@ -86,7 +86,61 @@ const reqApi= async function getApi(){
 
     router.post('/', async(req,res,next)=>{
         try{
-            let {name,height_min, height_max,weight_min,weight_max,life_span,image,}
+            let {name,height_min, height_max,weight_min,weight_max,life_span,image,temperament,createdInDb}= req.body;
+            const createDog= await Dog.create({
+                name,
+                height_min,
+                height_max,
+                weight_min,
+                weight_max,
+                life_span,
+                image,
+                createdInDb
+            })
+
+            temperament.map(async (e) =>{
+                const temperamentDb= await Temperament.findAll({
+                    where:{
+                        name : e,
+                    },
+                    include:[Dog]
+                })
+                createDog.addTemperament(temperamentDb)
+            })
+            res.status(200).send(createDog)
+        }
+        catch(err){
+            next(err)
+        }
+    })
+
+    router.get('/:id', async(req,res,next)=>{
+        try{
+            const {id}= req.params;
+            const allDogs= await reqAllDogs();
+            if(typeof id === 'string' && id.length > 8){
+                let filter= allDogs.filter(e => e.id == id)
+                res.status(200).send(filter);
+            }
+            else{
+                const api= await axios(`https://api.thedogapi.com/v1/breeds?api_key=${API_KEY}`);
+                const informationApi= api.data.map(e =>{
+                    return{
+                        id:e.id,
+                        name: e.name,
+                        life_span: e.life_span,
+                        weight: e.weight.metric,
+                        height: e.height.metric,
+                        temperament: e.temperament,
+                        image: e.image.url
+                    }
+                })
+            }
+            const find= informationApi.find(e => e.id === Number(id));
+            res.status(200).send(find)
+        }
+        catch(err){
+            next(err);
         }
     })
 
