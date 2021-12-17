@@ -14,7 +14,7 @@ router.get('/t', async(req,res,next)=>{
             }
         });
 
-        const filtered= infoApi.filter(data=> data.temperament !== undefined)
+        const filtered= infoApi.filter(data => data.temperament !== undefined)
         filtered.map(data=>{
             arrTemp.push(data.temperament.split(','));
             return arrTemp;

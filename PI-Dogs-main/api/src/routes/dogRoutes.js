@@ -2,12 +2,13 @@ require('dotenv').config();
 const {Router, application} = require('express');
 const router = Router();
 const axios= require('axios');
+const { Dog,Temperament } = require( '../db');
 //const server= require('../app')
 const {Op} = require('sequelize');
 const {API_KEY}= process.env;
 //const {getApi, getDbInfo, getAllInfo} = require('../controllers/infoController');
 //const {reqApi} = require('../controllers/infoController');
-const { Dog,Temperament } = require( '../db');
+
 
 
 /*------------INFO API------------------------------*/
@@ -25,7 +26,8 @@ const reqApi= async function getApi(){
                     height: e.height.metric.split('-'),
                     weight: e.weight.metric.split('-'),
                     life_span: e.life_span,
-                    image: e.image.url
+                    image: e.image.url,
+                    temperament:e.temperament,
                 }
                
             });
@@ -101,17 +103,23 @@ const reqApi= async function getApi(){
                     image,
                     createdInDb
                 })
-    
-                // temperament.map(async (e) =>{
-                //     const temperamentDb= await Temperament.findAll({
-                //         where:{
-                //             name : e,
-                //         },
-                //         include:[Dog]
-                //     })
-                //     createDog.addTemperament(temperamentDb)
+                // var setTemperaments= await createDog.setTemperaments(temperament)
+
+                // var db= await Dog.findAll({
+                //     include: Temperament
                 // })
-                res.status(200).send(createDog)
+                // res.json(db)
+               const dogCreated= await createDog.setTemperaments(temperament);
+                //infoTemperament=temperament.map(async (e) =>{
+                    const temperamentDb= await Temperament.findAll({
+                        where:{
+                            name : e,
+                        },
+                        include:[Dog]
+                    })
+                    createDog.addTemperament(temperamentDb)
+                
+                 res.status(200).send(dogCreated, "The dog has been successfully created")
             }
              
            
