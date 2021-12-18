@@ -16,7 +16,7 @@ const reqApi= async function getApi(){
           
          const reqApi = await axios.get(`https://api.thedogapi.com/v1/breeds?api_key=${API_KEY}`)
            // console.log(reqApi)
-         const componenteInfo= reqApi.data.map((e) => {
+         const componenteInfo= reqApi.data.map((e) => {// requiere datos de la API thedogapi.com
             return {
         //reqApi.data.map((e)=>{
            // Dog.findOrCreate({
@@ -88,46 +88,46 @@ const reqApi= async function getApi(){
 
     
 
-    router.post('/m', async(req,res,next)=>{
-        try{
-            var {name,height,weight,life_span,image,temperament,createdInDb}= req.body;
-            if (!name || !height || !weight){
-                return res.status(404).send("The name, height and weight are required");
-            }
-            else{
-                const createDog= await Dog.create({
-                    name,
-                    height,
-                    weight,
-                    life_span,
-                    image,
-                    createdInDb
-                })
-                // var setTemperaments= await createDog.setTemperaments(temperament)
+    // router.post('/m', async(req,res,next)=>{
+    //     try{
+    //         var {name,height,weight,life_span,image,temperament,createdInDb}= req.body;
+    //         if (!name || !height || !weight){
+    //             return res.status(404).send("The name, height and weight are required");
+    //         }
+    //         else if(JSON.parse(temperament).length > 0){
+    //             const createDog= await Dog.create({
+    //                 name,
+    //                 height,
+    //                 weight,
+    //                 life_span,
+    //                 image,
+    //                 createdInDb
+    //             })
+    //             // var setTemperaments= await createDog.setTemperaments(temperament)
 
-                // var db= await Dog.findAll({
-                //     include: Temperament
-                // })
-                // res.json(db)
-               const dogCreated= await createDog.setTemperaments(temperament);
-                //infoTemperament=temperament.map(async (e) =>{
-                    const temperamentDb= await Temperament.findAll({
-                        where:{
-                            name : e,
-                        },
-                        include:[Dog]
-                    })
-                    createDog.addTemperament(temperamentDb)
+    //             // var db= await Dog.findAll({
+    //             //     include: Temperament
+    //             // })
+    //             // res.json(db)
+    //            let dogCreated= await createDog.setTemperaments(temperament);
+    //             //infoTemperament=temperament.map(async (e) =>{
+    //                 const temperamentDb= await Temperament.findAll({
+    //                     where:{
+    //                         name : e,
+    //                     },
+    //                     include:[Dog]
+    //                 })
+    //                 createDog.addTemperament(temperamentDb)
                 
-                 res.status(200).send(dogCreated, "The dog has been successfully created")
-            }
+    //              res.status(200).send(dogCreated, "The dog has been successfully created")
+    //         }
              
            
-        }
-        catch(err){
-            next(err)
-        }
-    })
+    //     }
+    //     catch(err){
+    //         next(err)
+    //     }
+    // })
 
     router.get('/:id', async(req,res,next)=>{
         try{
@@ -139,6 +139,7 @@ const reqApi= async function getApi(){
             }
             else{
                 const api= await axios(`https://api.thedogapi.com/v1/breeds?api_key=${API_KEY}`);
+                console.log(api)
                 var informationApi= api.data.map(e =>{
                     return{
                         id:e.id,
@@ -160,29 +161,83 @@ const reqApi= async function getApi(){
     })
 
 
-    // router.post("/m", async (req, res) => {
-    //     try{
-    //       const { name, height, weight, lifeSpan, createdInDb, temperament } = req.body;
-    //       if (!name || !height || !weight)
-    //         return res.status(404).send("The name, height and weight are required");
-    //       const createdDog = await Dog.create({
-    //         name,
-    //         height,
-    //         weight,
-    //         lifeSpan,
-    //         /* temperament, */
-    //         /* createdInDb, */
-    //       });
-    //       await createdDog.setTemperaments(temperament);
-    //       return res.status(200).send("The dog has been successfully created");
-    //     }
+    router.post("/m", async (req, res) => {
+        try{
+          const { name, height, weight, life_span, createdInDb, temperaments } = req.body;
+          if (!name || !height || !weight)
+            return res.status(404).send("The name, height and weight are required");
+          const createdDog = await Dog.create({
+            name,
+            weight,
+            height,
+            life_span,
+            /* temperament, */
+            /* createdInDb, */
+          });
+          let temperamentDb = await Temperament.findAll({
+                 where: { name : temperaments }
+        });
+        dogCreated.addTemperament(temperamentDb)  
+        console.log(temperamentDb); 
+         // let temperamentDb =await createdDog.setTemperaments(temperament);
+          return res.status(200).send("The dog has been successfully created");
+        }
       
-    //     catch(err){
-    //       console.log(err)
-    //       res.status(404).json(err)
-    //     }
-    // })
+        catch(err){
+          console.log(err)
+          res.status(404).json(err)
+        }
+    })
 
+
+    // router.post('/m', async (req, res) => {
+    //     try{
+    //         let {
+    //             name,
+    //             height,
+    //             weight,
+    //             life_span,
+    //             image,
+    //             temperaments,
+    //         } = req.body;
+    //         let raceCreated = await Dog.create({
+    //             name,
+    //             height,
+    //             weight,
+    //             life_span: life_span + ' years',
+    //             image,
+    //         });
+    //         let temperamentDB = await Temperament.findAll({
+    //             where: {
+    //                 name: temperaments,
+    //             }
+    //         });
+    //         raceCreated.addTemperament(temperamentDB);
+    //         res.status(200).send('🐕 Race created successfully 🐶')
+    //     }
+    //     catch(err){
+    //                console.log(err)
+    //              res.status(404).json(err)
+    //             }
+       
+    // });
+    // router.get('/temperament', async(req,res,next)=>{
+    //     let temperamentsApi = await axios.get(`https://api.thedogapi.com/v1/breeds`)
+    //     let temperaments = temperamentsApi.data.map(el => el.temperament)
+    //      console.log(temperaments); 
+    //      const tempEach = temperaments.map(el => {
+    //         // for (let i = 0; i < el.length; i++) 
+    //         return el
+    //     })
+    //     tempEach.forEach(el => {
+    //         Temperament.findOrCreate({ where: { name: el } }) // las guardo en la base de datos 
+    //     })
+    //     const allTemperaments = await Temperament.findAll();  // las traigo de la base de datos 
+    //     console.log(allTemperaments)
+    //     res.send(allTemperaments) // 
+        
+    //     })
+     
         module.exports = router;
 
         
