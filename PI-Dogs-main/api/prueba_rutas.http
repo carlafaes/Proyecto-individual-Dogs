@@ -1,5 +1,24 @@
-GET http://localhost:3001/
+GET http://localhost:3001/dogs
 
 ###
+GET http://localhost:3001/temperament
+###
+GET http://localhost:3001/dogs/1
+###
 
-POST http://localhost:3001/name
+POST http://localhost:3001/dog
+ Content-Type: application/json
+ 
+{
+"weight": "3 - 6",
+"height":  "23 - 29",
+"id": 1,
+"name": "Affenpinscher",
+"bred_for": "Small rodent hunting, lapdog",
+"life_span": "10 - 12 years",
+"temperaments": "Stubborn, Curious, Playful, Adventurous, Active, Fun-loving",
+"origin": "Germany, France",
+"reference_image_id": "BJa4kxc4X",
+"image": "https://cdn2.thedogapi.com/images/BJa4kxc4X.jpg"
+
+}
