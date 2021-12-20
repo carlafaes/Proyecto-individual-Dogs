@@ -13,10 +13,24 @@ export default function Home(){
     
     },[dispatch])
 
+    function handleClick(e){
+        e.preventDefault();
+        dispatch(getDogs());
+    }
+
     return(
         <div>
             <Link to='/dogs'>Create dog</Link>
-            <h1></h1>
+            <button onClick={e => {handleClick(e)}}>
+                Refresh
+            </button>
+        <div>
+        
+            <select>
+                <option value='asc'>Ascendente</option>
+                <option value='desc'>Descendente</option>
+            </select>
+        </div>
         </div>
     )
 }

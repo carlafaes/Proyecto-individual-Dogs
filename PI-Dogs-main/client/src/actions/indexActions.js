@@ -32,8 +32,8 @@ export function getTemperament(){
     };
 };
 
-// export const searchByName= (name)=>{
-//     return(dispatch)=>{
-
-//     }
-// }
+export const searchByName= (name)=>{
+    return(dispatch)=>{
+        
+    }
+}

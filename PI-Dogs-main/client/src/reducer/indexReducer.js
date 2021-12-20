@@ -1,7 +1,7 @@
 
 
 const initialState={
-    dogs=[]
+    dogs:[]
 };
 
 function rootReducer(state= initialState,action){
