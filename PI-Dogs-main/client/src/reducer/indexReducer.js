@@ -8,7 +8,7 @@ import {
     GET_DETAIL,
     ADD_DOG,
     CLEAN_Q,
-  } from "../action/types";
+  } from "../actions/types";
 
 const initialState={
     dogs:[],
@@ -110,7 +110,7 @@ function rootReducer(state= initialState,action){
                 });
           return {
             ...state,
-            dogs: sortedArr,
+            dogs: sortedArray,
           };
         default:
           return state;

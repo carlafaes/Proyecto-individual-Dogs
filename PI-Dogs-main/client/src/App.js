@@ -1,4 +1,5 @@
 import './App.css';
+import { Router } from 'react-router';
 import {BrowserRouter, Route} from 'react-router-dom';
 import Switch from "react-switch";
 import LandingPage from './components/landingPage';
@@ -14,16 +15,17 @@ function App() {
   return (
     <BrowserRouter>
     <div className="App">
-      <Switch>
-        <Route exact path='/landing' component={LandingPage}/>
-        <Route path='/' component={Home}/>
+     <Router>
+        <Route exact path='/' component={LandingPage}/>
+        <Route path='/home' component={Home}/>
         <Route path='/' component={About}/>
         <Route path='/dogCreated' component={dogCreated}/>
         <Route path='/' component={dogCard}/>
         <Route path='/dogDetails' component={dogDetails}/>
         <Route path='/' component={navBar}/>
         <Route path='/' component={Paged}/>
-      </Switch>
+     </Router>
+   
     </div>
     </BrowserRouter>
   );
