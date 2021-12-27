@@ -43,17 +43,17 @@ export function getDogs(){
 //     };
 // };
 
-// export const searchByName= (name)=>{
-//     return async(dispatch)=>{
-//         axios.get(`http://localhost:3001/dogs${name}`)
-//         .then((data)=> {
-//             return dispatch({
-//                 type: SEARCH_BY_NAME,
-//                 payload: data.data,
-//             })
-//         })
-//     }
-// }
+export const searchByName= (name)=>{
+    return async(dispatch)=>{
+        axios.get(`http://localhost:3001/dogs${name}`)
+        .then((data)=> {
+            return dispatch({
+                type: SEARCH_BY_NAME,
+                payload: data.data,
+            })
+        })
+    }
+}
 
 // export const addDog=({
 //     name,
@@ -99,6 +99,8 @@ export function getDogs(){
 //         payload,
 //     };
 // }
+
+
 
 // export function cleanQ(payload){
 //     return{

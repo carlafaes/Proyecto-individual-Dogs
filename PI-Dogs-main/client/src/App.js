@@ -1,7 +1,7 @@
 import './App.css';
-import { Router } from 'react-router';
-import {BrowserRouter, Route} from 'react-router-dom';
-import Switch from "react-switch";
+//import { Router } from 'react-router';
+import { Route,Routes, BrowserRouter as Router} from 'react-router-dom';
+//import Switch from "react-switch";
 import LandingPage from './components/landingPage';
 import Home from './components/home';
 import About from './components/about';
@@ -13,9 +13,8 @@ import Paged from './components/paged';
 
 function App() {
   return (
-    <BrowserRouter>
-    <div className="App">
-     <Router>
+    <Router>
+       <Routes>
         <Route exact path='/' component={LandingPage}/>
         <Route path='/home' component={Home}/>
         <Route path='/' component={About}/>
@@ -24,10 +23,8 @@ function App() {
         <Route path='/dogDetails' component={dogDetails}/>
         <Route path='/' component={navBar}/>
         <Route path='/' component={Paged}/>
-     </Router>
-   
-    </div>
-    </BrowserRouter>
+        </Routes>
+    </Router>
   );
 }
 
