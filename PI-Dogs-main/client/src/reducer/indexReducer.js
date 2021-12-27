@@ -49,14 +49,14 @@ export default function rootReducer(state= initialState,action){
                 ...state,
                 dogs:action.payload
             };
-        // case FILTER_CREATED:
-        //     let backUp= state.backUpDogs;
-        //     let createdFilter= action.payload === 'CREATED'? backUp.filter((e)=> e.createdInDb) : backUp.filter((e)=> !e.createdInDb);
-        //     return{
-        //         ...state,
-        //         dogs: action.payload === 'ALL'? state.backUpDogs : createdFilter,
+         case FILTER_CREATED:
+            let backUp= state.backUpDogs;
+            let createdFilter= action.payload === 'CREATED'? backUp.filter((e)=> e.createdInDb) : backUp.filter((e)=> !e.createdInDb);
+            return{
+                ...state,
+                dogs: action.payload === 'ALL'? state.backUpDogs : createdFilter,
 
-        //     };
+            };
         case GET_DETAIL:
             return{
                 ...state,
@@ -112,11 +112,11 @@ export default function rootReducer(state= initialState,action){
     //         ...state,
     //         dogs: sortedArray,
     //       };
-    //     default:
-    //       return state;
-    //   }
+      default:
+           return state;
+       }
      }
-    }
+    //}
     
  //export default rootReducer;
             

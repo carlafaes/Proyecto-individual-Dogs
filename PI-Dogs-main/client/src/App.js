@@ -1,6 +1,6 @@
 import './App.css';
 //import { Router } from 'react-router';
-import { Route,Routes, BrowserRouter as Router} from 'react-router-dom';
+import { Route,Routes} from 'react-router-dom';
 //import Switch from "react-switch";
 import LandingPage from './components/landingPage';
 import Home from './components/home';
@@ -13,18 +13,18 @@ import Paged from './components/paged';
 
 function App() {
   return (
-    <Router>
+    <div className="App">
        <Routes>
-        <Route exact path='/' component={LandingPage}/>
-        <Route path='/home' component={Home}/>
-        <Route path='/' component={About}/>
-        <Route path='/dogCreated' component={dogCreated}/>
-        <Route path='/' component={dogCard}/>
-        <Route path='/dogDetails' component={dogDetails}/>
-        <Route path='/' component={navBar}/>
-        <Route path='/' component={Paged}/>
+        <Route  path='/' element={<LandingPage/>}/>
+        <Route path='/home' element={<Home/>}/>
+        <Route path='/' element={<About/>}/>
+        <Route path='/dogCreated' element={<dogCreated/>}/>
+        <Route path='/' element={<dogCard/>}/>
+        <Route path='/dogDetails' element={dogDetails}/>
+        <Route path='/' element={navBar}/>
+        <Route path='/' element={Paged}/>
         </Routes>
-    </Router>
+    </div>
   );
 }
 
