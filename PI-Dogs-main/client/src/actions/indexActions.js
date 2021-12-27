@@ -23,25 +23,25 @@ export function getDogs(){
     };
 };
 
-// export function getDetails(id){
-//     return async (dispatch)=>{
-//         const json=await axios.get(`http://localhost:3001/dogs/${id}`);
-//         return dispatch({
-//             type: GET_DETAIL,
-//             payload: json.data
-//         });
-//     };
-// };
+export function getDetails(id){
+    return async (dispatch)=>{
+        const json=await axios.get(`http://localhost:3001/dogs/${id}`);
+        return dispatch({
+            type: GET_DETAIL,
+            payload: json.data
+        });
+    };
+};
 
-// export function getTemperament(){
-//     return async(dispatch)=>{
-//         let json=await axios.get('http://localhost:3001/temperament');
-//         return dispatch({
-//             type:GET_TEMPERAMENTS,
-//             payload: json.data
-//         });
-//     };
-// };
+export function getTemperament(){
+    return async(dispatch)=>{
+        let json=await axios.get('http://localhost:3001/temperament');
+        return dispatch({
+            type:GET_TEMPERAMENTS,
+            payload: json.data
+        });
+    };
+};
 
 export const searchByName= (name)=>{
     return async(dispatch)=>{
@@ -55,29 +55,29 @@ export const searchByName= (name)=>{
     }
 }
 
-// export const addDog=({
-//     name,
-//     heightMin,
-//     heightMax,
-//     weightMin,
-//     weightMax,
-//     yearsMin,
-//     yearsMax,
-//     temperament,
-// }) => {
-//     return async(dispatch)=>{
-//        const acc= await axios.get('http://localhost:3001/dogs/',{
-//             name,
-//             height: heightMin + ' - ' + heightMax,
-//             weight: weightMin+ ' - ' + weightMax,
-//             lifeSpan: yearsMin + ' - ' + yearsMax + 'years',
-//             temperament
-//         });
-//         dispatch({
-//             type:ADD_DOG,
-//         });
-//     };
-// };
+export const addDog=({
+    name,
+    heightMin,
+    heightMax,
+    weightMin,
+    weightMax,
+    yearsMin,
+    yearsMax,
+    temperament,
+}) => {
+    return async(dispatch)=>{
+       const addGet= await axios.get('http://localhost:3001/dogs/',{
+            name,
+            height: heightMin + ' - ' + heightMax,
+            weight: weightMin+ ' - ' + weightMax,
+            lifeSpan: yearsMin + ' - ' + yearsMax + 'years',
+            temperament
+        });
+        dispatch({
+            type:ADD_DOG,
+        });
+    };
+};
 
 // export function filterCreated(payload){
 //     return{

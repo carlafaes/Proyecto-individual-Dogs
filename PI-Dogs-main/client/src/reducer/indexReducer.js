@@ -17,7 +17,7 @@ const initialState={
     detail:{}
 };
 
-export default function rootReducer(state= initialState,action){
+export default function rootReducer(state= initialState,action){ //action(tiene type y payload)
     switch(action.type){
         case GET_DOGS:
             return{

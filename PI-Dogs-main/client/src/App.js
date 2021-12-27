@@ -20,9 +20,9 @@ function App() {
         <Route path='/' element={<About/>}/>
         <Route path='/dogCreated' element={<dogCreated/>}/>
         <Route path='/' element={<dogCard/>}/>
-        <Route path='/dogDetails' element={dogDetails}/>
-        <Route path='/' element={navBar}/>
-        <Route path='/' element={Paged}/>
+        <Route path='/dogDetails' element={<dogDetails/>}/>
+        <Route path='/' element={<navBar/>}/>
+        <Route path='/' element={<Paged/>}/>
         </Routes>
     </div>
   );

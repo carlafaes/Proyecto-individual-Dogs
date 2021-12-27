@@ -5,7 +5,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 
 export  const store= createStore(
     rootReducer,
-    composeWithDevTools(applyMiddleware(thunk))
+    composeWithDevTools(applyMiddleware(thunk))//sin applyModdleware no se pueden realizar pedidos asincronos
 );
 
 //export default store;
