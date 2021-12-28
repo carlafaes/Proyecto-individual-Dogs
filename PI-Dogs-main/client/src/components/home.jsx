@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getDogs,getTemperament,filterByTemperament,filterCreated,filterbyValue } from "../actions/indexActions";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import DogCard from "./DogCard";
 import Paged from './Paged'
 
