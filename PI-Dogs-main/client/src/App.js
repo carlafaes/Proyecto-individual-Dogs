@@ -8,11 +8,11 @@ import About from './components/About';
 import dogCard from './components/DogCard';
 import dogCreated from './components/DogCreated';
 import dogDetails from './components/DogDetails';
-import navBar from './components/NavBar';
-import Paged from './components/Paged';
+
 
 function App() {
   return (
+    
     <div className="App">
        <Routes>
         <Route  path='/' element={<LandingPage/>}/>

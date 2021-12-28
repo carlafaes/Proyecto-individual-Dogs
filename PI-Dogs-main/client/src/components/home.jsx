@@ -2,11 +2,12 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getDogs,getTemperament,filterByTemperament,filterCreated,filterbyValue } from "../actions/indexActions";
-import { Link } from "react-router-dom";
-import dogCard from "./DogCard";
+import { Link } from 'react-router-dom'
+import DogCard from "./DogCard";
+import Paged from './Paged'
 
 
-export default function Home(){
+ export default function Home(){
     const dispatch= useDispatch();
     const allDogs= useSelector((state)=> state.dogs);
    // const temperament=useSelector((state)=>state.temperaments);
@@ -42,19 +43,19 @@ export default function Home(){
 
     return(
         <div>
-            <Link to='/dogs'>Create dog</Link>
+            <Link to='/'>Create dog</Link>
             <button onClick={e => {handleClick(e)}}>
                 Refresh
             </button>
         <div>
         
-            <select className="filtros" onChange={(e)=> handleFrom(e)}>
+             <select className="filtros">
                 <option value='all'>All</option>
                 <option value='created'>Created</option>
                 <option value='api'>API</option>
             </select>
 
-            <select className="filter" onChange={(e) => handleFilterTemperament(e)}>
+            {/* <select className="filter" >
                 <option value='allTemp'>Todos Temp</option>
                 {temperament?.map((el)=>{
                     <option value={el.name} key={el.id}>
@@ -62,10 +63,10 @@ export default function Home(){
                   </option>
                 })}
 
-            </select>
+            </select> */}
         </div>
         <div>
-            <paginated
+            <Paged
             dogsXPage={dogsXPage}
             allDogs={allDogs.length}
             paginated={paginated}
@@ -75,7 +76,7 @@ export default function Home(){
                 {allDogs && allDogs.map((el)=>{
                 return(
                     <><Link to={'/dogs/' + el.id} />
-                    <dogCard
+                    <DogCard
                         name={el.id}
                         img={el.img ? el.img : el.image}
                         temperament={el.temperament}
