@@ -79,26 +79,26 @@ export const addDog=({
     };
 };
 
-// export function filterCreated(payload){
-//     return{
-//         type: FILTER_CREATED,
-//         payload,
-//     };
-// }
+export function filterCreated(payload){
+    return{
+        type: FILTER_CREATED,
+        payload,
+    };
+}
 
-// export function filterByTemperament(payload){
-//     return{
-//         type: FILTER_TEMPERAMENT,
-//         payload,
-//     };
-// }
+export function filterByTemperament(payload){
+    return{
+        type: FILTER_TEMPERAMENT,
+        payload,
+    };
+}
 
-// export function filterbyValue(payload){
-//     return{
-//         type: FILTER_BY_VALUE,
-//         payload,
-//     };
-// }
+export function filterbyValue(payload){
+    return{
+        type: FILTER_BY_VALUE,
+        payload,
+    };
+}
 
 
 

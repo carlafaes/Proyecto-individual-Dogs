@@ -12,7 +12,7 @@ import {
 
 const initialState={
     dogs:[],
-    backUpDogs:[],
+    fitered:[],
     temperaments:{},
     detail:{}
 };
@@ -23,7 +23,7 @@ export default function rootReducer(state= initialState,action){ //action(tiene 
             return{
                 ...state,
                 dogs: action.payload,
-                backUpDogs:action.payload
+                filtered:action.payload
             };
 
         case ADD_DOG:
@@ -36,7 +36,7 @@ export default function rootReducer(state= initialState,action){ //action(tiene 
                 detail:[]
             };
         case FILTER_TEMPERAMENT:
-            let allDogs= state.backUpDogs;
+            let allDogs= state.filtered;
             let temperamentsFiltered= action.payload === 'all' ? allDogs : allDogs.filter((e)=>
             e.temperaments?.includes(action.payload)
             );
@@ -49,6 +49,11 @@ export default function rootReducer(state= initialState,action){ //action(tiene 
                 ...state,
                 dogs:action.payload
             };
+            case SEARCH_BY_NAME:
+                return {
+                  ...state,
+                  dogs: action.payload,
+                };
          case FILTER_CREATED:
             let backUp= state.backUpDogs;
             let createdFilter= action.payload === 'CREATED'? backUp.filter((e)=> e.createdInDb) : backUp.filter((e)=> !e.createdInDb);
@@ -62,56 +67,56 @@ export default function rootReducer(state= initialState,action){ //action(tiene 
                 ...state,
                 detail: action.payload,
             };
-    //     case FILTER_BY_VALUE:
-    //         let info=state.backUpDogs;
-    //         let sortedArray= action.payload === 'AZ' ? info.sort(function(a,b){
-    //             if(a.name > b.name){
-    //                 return 1;
-    //             }
-    //             if(b.name > a.name){
-    //                 return -1;
-    //             }
-    //             return 0;
-    //         })
-    //         : action.payload === 'ZA'? info.sort(function(a,b){
-    //             if(a.name > b.name){
-    //                 return 1;
-    //             }
-    //             if(a.name > b.name){
-    //                 return 1;
-    //             }
-    //             return 0;
-    //         })
-    //         : action.payload === 'HIGH'? info.sort(function(a,b){
-    //             if (
-    //                 Number(a.weight.split("-")[0]) > Number(b.weight.split("-")[0])
-    //               ) {
-    //                 return -1;
-    //               }
-    //               if (
-    //                 Number(b.weight.split("-")[0]) > Number(a.weight.split("-")[0])
-    //               ) {
-    //                 return 1;
-    //               }
-    //               return 0;
-    //             })
-    //           : info.sort(function (a, b) {
-    //               if (
-    //                 Number(a.weight.split("-")[0]) > Number(b.weight.split("-")[0])
-    //               ) {
-    //                 return 1;
-    //               }
-    //               if (
-    //                 Number(b.weight.split("-")[0]) > Number(a.weight.split("-")[0])
-    //               ) {
-    //                 return -1;
-    //               }
-    //               return 0;
-    //             });
-    //       return {
-    //         ...state,
-    //         dogs: sortedArray,
-    //       };
+        case FILTER_BY_VALUE:
+            let info=state.backUpDogs;
+            let sortedArray= action.payload === 'AZ' ? info.sort(function(a,b){
+                if(a.name > b.name){
+                    return 1;
+                }
+                if(b.name > a.name){
+                    return -1;
+                }
+                return 0;
+            })
+            : action.payload === 'ZA'? info.sort(function(a,b){
+                if(a.name > b.name){
+                    return 1;
+                }
+                if(a.name > b.name){
+                    return 1;
+                }
+                return 0;
+            })
+            : action.payload === 'HIGH'? info.sort(function(a,b){
+                if (
+                    Number(a.weight.split("-")[0]) > Number(b.weight.split("-")[0])
+                  ) {
+                    return -1;
+                  }
+                  if (
+                    Number(b.weight.split("-")[0]) > Number(a.weight.split("-")[0])
+                  ) {
+                    return 1;
+                  }
+                  return 0;
+                })
+              : info.sort(function (a, b) {
+                  if (
+                    Number(a.weight.split("-")[0]) > Number(b.weight.split("-")[0])
+                  ) {
+                    return 1;
+                  }
+                  if (
+                    Number(b.weight.split("-")[0]) > Number(a.weight.split("-")[0])
+                  ) {
+                    return -1;
+                  }
+                  return 0;
+                });
+          return {
+            ...state,
+            dogs: sortedArray,
+          };
       default:
            return state;
        }
