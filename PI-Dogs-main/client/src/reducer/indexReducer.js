@@ -13,8 +13,8 @@ import {
 const initialState={
     dogs:[],
     fitered:[],
-    temperaments:{},
-    detail:{}
+    temperaments:[],
+    detail:[]
 };
 
 export default function rootReducer(state= initialState,action){ //action(tiene type y payload)

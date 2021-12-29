@@ -9,11 +9,11 @@ import Paged from './Paged'
 
  export default function Home(){
     const dispatch= useDispatch();
-    const allDogs= useSelector((state)=> state.dogs);
+    const allDogs= useSelector((state)=> state.dogs);//trae del reducer el estado dogs
    // const temperament=useSelector((state)=>state.temperaments);
-    const [currentPage,setCurrentPage]=useState(1);
+    const [currentPage,setCurrentPage]=useState(1);//guarda la pagina actual, y tiene la constante que setea la pagina actual
     const [order,setOrder]= useState('');
-    const [dogsXPage,setDogsXPage]= useState(9);
+    const [dogsXPage,setDogsXPage]= useState(9);//dogs por pagina
 
     const indexLastDog= currentPage * dogsXPage;
    //el index del ultimo dog es la currentPage, multiplicado por la cantidad de dogs por pagina
@@ -21,7 +21,7 @@ import Paged from './Paged'
 //el index del primer dog es igual al indice del ultimo perro menos la cantidad de dogs por pagina
     
     const currentDog= allDogs.slice(indexFirstDog,indexLastDog);
-//toma las porciones que hay en los parametros, desde el index  del primer perro [0], hasta el index del ultimo perro[9],por lo que quedarian 9 dogs por pagina
+//toma las porciones que hay en los parametros, desde el index del primer perro [0], hasta el index del ultimo perro[9],por lo que quedarian 9 dogs por pagina
 
     const paginated= (pageNumber)=>{
         setCurrentPage(pageNumber);
@@ -42,11 +42,12 @@ import Paged from './Paged'
   
 
     return(
-        <div>
+       <> <div>
             <Link to='/'>Create dog</Link>
             <button onClick={e => {handleClick(e)}}>
                 Refresh
             </button>
+        </div>
         <div>
         
              <select className="filtros">
@@ -65,6 +66,7 @@ import Paged from './Paged'
 
             </select> */}
         </div>
+    
         <div>
             <Paged
             dogsXPage={dogsXPage}
@@ -73,22 +75,27 @@ import Paged from './Paged'
             />
         </div>
         <div>
-                {allDogs && allDogs.map((el)=>{
+                {currentDog && currentDog.map((el)=>{
+                    //console.log(currentDog)  
                 return(
                     <><Link to={'/dogs/' + el.id} />
                     <DogCard
-                        name={el.id}
-                        img={el.img ? el.img : el.image}
+                        key={el.id}
+                        name={el.name}
+                        img={el.image}
+                        weight={el.weight? el.weight[0] : el.weight_min}
                         temperament={el.temperament}
                         temperaments={el.temperaments}
                         id={el.id} 
                         /></>
-               
-                  )   
+                        
+                  ) 
+                 
                 })
             }
                 </div>
-        </div>
+        
+        </>
     )
 }
 

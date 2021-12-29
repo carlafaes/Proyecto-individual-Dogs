@@ -4,13 +4,18 @@ import {Link} from 'react-router-dom';
 export default function dogCard({name,image,temperament,weight,id}){
     return(
         <><div className='dogCard'>
-            <Link to={`/dogs/${id}`}>
-            <img src={image} alt='dogCard' className='cardImg' />
+             <img src={image} alt='dogCard' className='cardImg' width = "400px" height="270px" />
             <h3>{name}</h3>
-            <h1>Temperament</h1>
-            {temperament? temperament.map((el)=>' '+ el +'') : temperament?.map((el)=>el.name + ',')}
+            <Link to={`/${id}`}>
+            <button className='masInfo'> Más Info </button>
             </Link>
-                
-            </div></>
+                 {/* <h1>Temperament</h1>
+            {temperament? temperament.map((el)=>' '+ el +'') : temperament?.map((el)=>el.name + ',')} */}
+            </div>
+            <div className='info'>
+                <h4> Peso </h4> 
+                <p> {parseInt(weight) + 5} kilos</p> 
+            </div>
+            </>
     )
 }
