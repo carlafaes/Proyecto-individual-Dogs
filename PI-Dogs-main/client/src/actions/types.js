@@ -7,4 +7,5 @@ export const ADD_DOG = "ADD_DOG";
 export const FILTER_BY_VALUE = "FILTER_BY_VALUE";
 export const FILTER_TEMPERAMENT = "FILTER_TEMPERAMENT";
 export const FILTER_CREATED = "FILTER_CREATED";
-export const CLEAN_Q = 'CLEAN_Q';
+export const ORDER_BY = 'ORDER_BY';
+export const ORDER_BY_WEIGHT= 'ORDER_BY_WEIGHT';

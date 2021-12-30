@@ -8,7 +8,8 @@ import {
     FILTER_BY_VALUE,
     FILTER_TEMPERAMENT,
     FILTER_CREATED,
-    CLEAN_Q,
+    ORDER_BY,
+    ORDER_BY_WEIGHT
   } from "./types";
 
 export function getDogs(){
@@ -87,17 +88,10 @@ export function filterCreated(payload){
 }
 
 export function filterByTemperament(payload){
-    return async function(dispatch){
-        try{
-            var json=await axios.get(`http://localhost:3001/dog/?temperament=${payload}`);
-            return dispatch({
-                type: FILTER_TEMPERAMENT,
-                payload:json.data
-            });
-          }
-        catch(err){
-            console.log(err, 'Error is in filterByTemperament')
-        }
+    console.log(payload)
+    return{
+     type:FILTER_TEMPERAMENT,
+     payload
     }
   
 }
@@ -109,4 +103,16 @@ export function filterbyValue(payload){
     };
 }
 
+export function orderBy(value){
+    return {
+        type: ORDER_BY,
+        payload: value,
+    }
+}
 
+export function orderByWeight(value){
+    return{
+        type:ORDER_BY_WEIGHT,
+        payload:value,
+    }
+}

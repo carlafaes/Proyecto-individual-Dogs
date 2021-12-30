@@ -1,16 +1,19 @@
 import React, { Fragment } from "react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getDogs,getTemperament,filterByTemperament,filterCreated,filterbyValue } from "../actions/indexActions";
+import { getDogs,getTemperament,filterCreated,filterbyValue } from "../actions/indexActions";
 import { Link } from 'react-router-dom';
 import DogCard from "./DogCard";
 import Paged from './Paged'
+import Temperament from "./Temperament";
+import OrderAlfab from "./OrderAlfab";
+import OrderWeight from './OrderWeight';
 
 
  export default function Home(){
     const dispatch= useDispatch();
     const allDogs= useSelector((state)=> state.dogs);//trae del reducer el estado dogs
-    const temperament=useSelector((state)=>state.temperaments);
+    const temperament=useSelector((state)=>state.temperament);
     const [currentPage,setCurrentPage]=useState(1);//guarda la pagina actual, y tiene la constante que setea la pagina actual
     const [dogsXPage,setDogsXPage]= useState(9);//dogs por pagina
 
@@ -44,9 +47,7 @@ import Paged from './Paged'
         dispatch(filterbyValue(e.target.value));
     }
     
-    function handleFilterByTemperament(e){
-        dispatch(filterByTemperament(e.target.value))
-    }
+   
 
     return(
         <Fragment> <div>
@@ -63,21 +64,10 @@ import Paged from './Paged'
                     <option value='api'>API</option>
                 </select>
 
-                <select className="filtrosAB" onClick={e => {handleFilterByValue(e)}}>
-                    <option value='AZ'>A-Z</option>
-                    <option value='ZA'>Z-A</option>
-                    <option value='WEIGHT'>Weight</option>
-                </select>
-
-                 {/* <select className="filterByTemp" onChange={e => handleFilterByTemperament(e)}>
-                    <option value='temperament'>Temperament</option>
-                    {temperament?.map((el)=>{
-                        <option value={el.name} key={el.id}>
-                        {el.name}
-                    </option>
-                    })} */}
-
-                {/* </select>  */}
+            </div>
+            <div>
+                <OrderAlfab value={setCurrentPage} set={setOrder}/>
+                <OrderWeight value={setCurrentPage}/>
             </div>
         
             <div>
@@ -87,6 +77,10 @@ import Paged from './Paged'
                 paginated={paginated}
                 />
             </div>
+            <div className='dosFiltros'>
+                <Temperament value={setCurrentPage}/>
+                        
+             </div>
             <div>
                     {currentDog && currentDog.map((el)=>{
                         console.log(el)  
