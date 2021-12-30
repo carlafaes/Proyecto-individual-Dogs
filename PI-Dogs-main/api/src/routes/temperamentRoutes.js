@@ -14,7 +14,7 @@ const {Temperament}= require ('../db');
             where: { name: el }})
       }
         temperamentoBd = await Temperament.findAll();
-       console.log(temperamentApi)
+       //console.log(temperamentApi)
         res.status(200).json(temperamentoBd);
     } catch (error) {
         res.status(404).send('No se tiene respuesta a su solicitud' + error)

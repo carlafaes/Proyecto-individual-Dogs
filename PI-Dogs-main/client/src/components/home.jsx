@@ -49,8 +49,7 @@ import Paged from './Paged'
     }
 
     return(
-        <Fragment key={456}>
-            0 <div>
+        <Fragment key={456}> <div>
                 <Link to='/'>Create dog</Link>
                 <button onClick={e => {handleClick(e)}}>
                     Refresh
@@ -70,15 +69,15 @@ import Paged from './Paged'
                     <option value='WEIGHT'>Weight</option>
                 </select>
 
-                 <select className="filterByTemp" onChange={e => handleFilterByTemperament(e)}>
+                 {/* <select className="filterByTemp" onChange={e => handleFilterByTemperament(e)}>
                     <option value='temperament'>Temperament</option>
                     {temperament?.map((el)=>{
                         <option value={el.name} key={el.id}>
                         {el.name}
                     </option>
-                    })}
+                    })} */}
 
-                </select> 
+                {/* </select>  */}
             </div>
         
             <div>
@@ -96,7 +95,7 @@ import Paged from './Paged'
                         <DogCard
                             key={el.id}
                             name={el.name}
-                            img={el.image}
+                            image={el.image}
                             weight={el.weight? el.weight[0] : el.weight_min}
                             temperament={el.temperament}
                             temperaments={el.temperaments}

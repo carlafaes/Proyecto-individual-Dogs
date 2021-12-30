@@ -37,14 +37,14 @@ export default function rootReducer(state= initialState,action){ //action(tiene 
             e.temperament === action.payload);
             return{
                 ...state,
-                dogs: temperamentsFiltered,
+                temperaments: temperamentsFiltered,
             };
         case GET_TEMPERAMENTS:
             return{
                 ...state,
-                dogs:action.payload
+                temperaments:action.payload
             };
-            case SEARCH_BY_NAME:
+        case SEARCH_BY_NAME:
                 return {
                   ...state,
                   dogs: action.payload,

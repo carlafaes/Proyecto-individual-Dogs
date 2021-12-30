@@ -10,15 +10,15 @@ export default function Paginado({dogsXPage,allDogs,paginated}){
     }
 
     return(
-        <nav>
+        <div>
             <ul className="paged">
                 {pageNumbers && pageNumbers.map(num =>{
                     <li className="numberPage" key={num}>
-                        <a href="/#" onClick={()=> paginated(num)}>{num}</a>
+                        <button onClick={()=> paginated(num)}>{num}</button>
                     </li>
                     
                 })}
             </ul>
-        </nav>
+        </div>
     )
 }

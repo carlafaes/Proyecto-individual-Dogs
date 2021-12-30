@@ -10,8 +10,8 @@ export default function dogCard({name,image,temperament,weight,id}){
             <Link to={`/${id}`}>
             <button className='masInfo'> Más Info </button>
             </Link>
-                 {/* <h1>Temperament</h1>
-            {temperament? temperament.map((el)=>' '+ el +'') : temperament?.map((el)=>el.name + ',')} */}
+             <h1>Temperament</h1>
+            {/* {temperament? temperament.map((el)=>' '+ el +'') : temperament?.map((el)=>el.name + ',')}  */}
             </div>
             <div className='info'>
                 <h4> Peso </h4> 
