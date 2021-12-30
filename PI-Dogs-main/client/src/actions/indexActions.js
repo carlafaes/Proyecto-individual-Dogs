@@ -87,10 +87,19 @@ export function filterCreated(payload){
 }
 
 export function filterByTemperament(payload){
-    return{
-        type: FILTER_TEMPERAMENT,
-        payload,
-    };
+    return async function(dispatch){
+        try{
+            var json=await axios.get(`http://localhost:3001/dog/?temperament=${payload}`);
+            return dispatch({
+                type: FILTER_TEMPERAMENT,
+                payload:json.data
+            });
+          }
+        catch(err){
+            console.log(err, 'Error is in filterByTemperament')
+        }
+    }
+  
 }
 
 export function filterbyValue(payload){
@@ -101,10 +110,3 @@ export function filterbyValue(payload){
 }
 
 
-
-// export function cleanQ(payload){
-//     return{
-//         type: CLEAN_Q,
-//         payload,
-//     };
-// }

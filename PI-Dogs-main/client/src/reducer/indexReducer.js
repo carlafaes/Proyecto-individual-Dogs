@@ -7,7 +7,7 @@ import {
     GET_TEMPERAMENTS,
     GET_DETAIL,
     ADD_DOG,
-    CLEAN_Q,
+    
   } from "../actions/types";
 
 const initialState={
@@ -30,16 +30,11 @@ export default function rootReducer(state= initialState,action){ //action(tiene 
             return{
                 ...state,
             };
-        case CLEAN_Q:
-            return{
-                ...state,
-                detail:[]
-            };
+        
         case FILTER_TEMPERAMENT:
-            let allDogs= state.filtered;
-            let temperamentsFiltered= action.payload === 'all' ? allDogs : allDogs.filter((e)=>
-            e.temperaments?.includes(action.payload)
-            );
+            const allDogs= state.dogs;
+            const temperamentsFiltered= action.payload === 'all' ? allDogs : allDogs.filter((e)=>
+            e.temperament === action.payload);
             return{
                 ...state,
                 dogs: temperamentsFiltered,
@@ -68,7 +63,7 @@ export default function rootReducer(state= initialState,action){ //action(tiene 
                 detail: action.payload,
             };
         case FILTER_BY_VALUE:
-            let info=state.backUpDogs;
+            let info=state.dogs;
             let sortedArray= action.payload === 'AZ' ? info.sort(function(a,b){
                 if(a.name > b.name){
                     return 1;
@@ -80,14 +75,14 @@ export default function rootReducer(state= initialState,action){ //action(tiene 
             })
             : action.payload === 'ZA'? info.sort(function(a,b){
                 if(a.name > b.name){
-                    return 1;
+                    return -1;
                 }
                 if(a.name > b.name){
                     return 1;
                 }
                 return 0;
             })
-            : action.payload === 'HIGH'? info.sort(function(a,b){
+            : action.payload === 'WEIGHT'? info.sort(function(a,b){
                 if (
                     Number(a.weight.split("-")[0]) > Number(b.weight.split("-")[0])
                   ) {

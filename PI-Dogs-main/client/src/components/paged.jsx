@@ -6,7 +6,7 @@ export default function Paginado({dogsXPage,allDogs,paginated}){
 
     //recorro el array y tomo el numero que resulta de allDogs/dogsXPage,y lo pusheo a pageNumber
     for(let i=0; i<= Math.ceil(allDogs/dogsXPage);i++){
-        pageNumbers.push(i);
+        pageNumbers.push(i+1);
     }
 
     return(

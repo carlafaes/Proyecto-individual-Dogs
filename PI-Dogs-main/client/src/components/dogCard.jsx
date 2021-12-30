@@ -6,6 +6,7 @@ export default function dogCard({name,image,temperament,weight,id}){
         <><div className='dogCard'>
              <img src={image} alt='dogCard' className='cardImg' width = "400px" height="270px" />
             <h3>{name}</h3>
+            <h3>{temperament}</h3>
             <Link to={`/${id}`}>
             <button className='masInfo'> Más Info </button>
             </Link>
@@ -14,7 +15,7 @@ export default function dogCard({name,image,temperament,weight,id}){
             </div>
             <div className='info'>
                 <h4> Peso </h4> 
-                <p> {parseInt(weight) + 5} kilos</p> 
+                <p> {weight} kilos</p> 
             </div>
             </>
     )
