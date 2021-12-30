@@ -49,7 +49,7 @@ import Paged from './Paged'
     }
 
     return(
-        <Fragment key={456}> <div>
+        <Fragment> <div>
                 <Link to='/'>Create dog</Link>
                 <button onClick={e => {handleClick(e)}}>
                     Refresh
@@ -63,7 +63,7 @@ import Paged from './Paged'
                     <option value='api'>API</option>
                 </select>
 
-                <select className="filtrosAB" onChange={e => {handleFilterByValue(e)}}>
+                <select className="filtrosAB" onClick={e => {handleFilterByValue(e)}}>
                     <option value='AZ'>A-Z</option>
                     <option value='ZA'>Z-A</option>
                     <option value='WEIGHT'>Weight</option>
