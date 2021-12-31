@@ -15,8 +15,7 @@ function App() {
        <Routes>
         <Route  path='/' element={<LandingPage/>}/>
         <Route path='/home' element={<Home/>}/>
-       {/* <Route path='/dogCreated' element={<DogCreated/>}/> */}
-        {/* <Route path='/dogDetails' element={<DogDetails/>}/> */}
+      
         </Routes>
     </div>
   );

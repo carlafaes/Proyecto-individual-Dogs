@@ -5,9 +5,8 @@ import {
     GET_TEMPERAMENTS,
     SEARCH_BY_NAME,
     ADD_DOG,
-    FILTER_BY_VALUE,
     FILTER_TEMPERAMENT,
-    FILTER_CREATED,
+    FILTER_BREED,
     ORDER_BY,
     ORDER_BY_WEIGHT
   } from "./types";
@@ -46,15 +45,15 @@ export function getTemperament(){
 
 export const searchByName= (name)=>{
     return async(dispatch)=>{
-        axios.get(`http://localhost:3001/dogs${name}`)
-        .then((data)=> {
+        const getName= await axios.get(`http://localhost:3001/dogs?name=${name}`)
+        // console.log(getName, 'error getname')
             return dispatch({
                 type: SEARCH_BY_NAME,
-                payload: data.data,
+                payload: getName.data,
             })
-        })
-    }
-}
+       }
+  }
+
 
 export const addDog=({
     name,
@@ -80,10 +79,10 @@ export const addDog=({
     };
 };
 
-export function filterCreated(payload){
+export function filterBreed(value){
     return{
-        type: FILTER_CREATED,
-        payload,
+        type: FILTER_BREED,
+        payload:value
     };
 }
 
@@ -96,12 +95,12 @@ export function filterByTemperament(payload){
   
 }
 
-export function filterbyValue(payload){
-    return{
-        type: FILTER_BY_VALUE,
-        payload,
-    };
-}
+// export function filterbyValue(payload){
+//     return{
+//         type: FILTER_BY_VALUE,
+//         payload,
+//     };
+// }
 
 export function orderBy(value){
     return {

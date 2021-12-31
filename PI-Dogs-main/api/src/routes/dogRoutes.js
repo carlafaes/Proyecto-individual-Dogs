@@ -20,8 +20,8 @@ const reqApi= async function getApi(){
             return {
                     id: e.id,
                     name: e.name,
-                    height: e.height.metric.split('-'),
-                    weight: e.weight.metric.split('-'),
+                    height: e.height.metric.split(' - '),
+                    weight: e.weight.metric.split(' - '),
                     life_span: e.life_span,
                     image: e.image.url,
                     temperament:e.temperament,
@@ -123,7 +123,7 @@ const reqApi= async function getApi(){
                  where: { name : temperaments }
         });
         dogCreated.addTemperament(temperamentDb)  
-        console.log(temperamentDb); 
+        // console.log(temperamentDb); 
           return res.status(200).json("The dog has been successfully created");
         }
       

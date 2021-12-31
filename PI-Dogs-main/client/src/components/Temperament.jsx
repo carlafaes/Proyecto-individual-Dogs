@@ -14,8 +14,9 @@ export default function Temperament({value}){
     
 return(
     <div>
-         <select className="filterByTemp" onClick={e => handleFilterByTemperament(e)}>
-             <option value='temperament'key={13}>Temperament</option>
+        <label>Temperament</label>
+         <select value='temperament' className="filterByTemp" onChange={e => handleFilterByTemperament(e)}>
+            
                     {allTemperament && allTemperament.map((el)=>(
                      <option value={el.name} key={el.id}>
                         {el.name}

@@ -12,11 +12,14 @@ export default function OrderAlfab({value,set}){
     }
 
     return(
+        <div>
+        <label>Order</label>
         <select onClick={(e)=> handleFilterByAZ(e)}>
-            <option>Order</option>
+            
             <option value='AZ'>A-Z</option>
             <option value='ZA'>Z-A</option>
         </select>
+        </div>
     )
 }
 

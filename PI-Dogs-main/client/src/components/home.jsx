@@ -1,21 +1,22 @@
 import React, { Fragment } from "react";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getDogs,getTemperament,filterCreated,filterbyValue } from "../actions/indexActions";
+import { getDogs,getTemperament } from "../actions/indexActions";
 import { Link } from 'react-router-dom';
 import DogCard from "./DogCard";
 import Paged from './Paged'
 import Temperament from "./Temperament";
 import OrderAlfab from "./OrderAlfab";
 import OrderWeight from './OrderWeight';
-
+import OrderBreed from "./OrderBreed";
+import SearchBar from "./SearchBar";
 
  export default function Home(){
     const dispatch= useDispatch();
     const allDogs= useSelector((state)=> state.dogs);//trae del reducer el estado dogs
     const temperament=useSelector((state)=>state.temperament);
     const [currentPage,setCurrentPage]=useState(1);//guarda la pagina actual, y tiene la constante que setea la pagina actual
-    const [dogsXPage,setDogsXPage]= useState(9);//dogs por pagina
+    const [dogsXPage,setDogsXPage]= useState(8);//dogs por pagina
 
     const indexLastDog= currentPage * dogsXPage;
    //el index del ultimo dog es la currentPage, multiplicado por la cantidad de dogs por pagina
@@ -31,6 +32,7 @@ import OrderWeight from './OrderWeight';
         setCurrentPage(pageNumber);
     }
 
+
     useEffect(()=>{
         dispatch(getDogs());
         dispatch(getTemperament());
@@ -43,35 +45,30 @@ import OrderWeight from './OrderWeight';
         setCurrentPage(1);
     }
     
-    function handleFilterByValue(e){
-        dispatch(filterbyValue(e.target.value));
-    }
+    // function handleFilterByValue(e){
+    //     dispatch(filterbyValue(e.target.value));
+    // }
     
    
 
     return(
         <Fragment> <div>
-                <Link to='/'>Create dog</Link>
                 <button onClick={e => {handleClick(e)}}>
                     Refresh
                 </button>
             </div>
             <div>
-            
-                <select className="filtros">
-                    <option value='all'>All</option>
-                    <option value='created'>Created</option>
-                    <option value='api'>API</option>
-                </select>
-
+                <SearchBar value={setCurrentPage} />
             </div>
+           
             <div>
                 <OrderAlfab value={setCurrentPage} set={setOrder}/>
-                <OrderWeight value={setCurrentPage}/>
+                <OrderWeight value={setCurrentPage} set={setOrder}/>
             </div>
         
             <div>
                 <Paged
+                key='6555'
                 dogsXPage={dogsXPage}
                 allDogs={allDogs.length}
                 paginated={paginated}
@@ -79,11 +76,11 @@ import OrderWeight from './OrderWeight';
             </div>
             <div className='dosFiltros'>
                 <Temperament value={setCurrentPage}/>
-                        
+                <OrderBreed value={setCurrentPage}/>       
              </div>
             <div>
                     {currentDog && currentDog.map((el)=>{
-                        console.log(el)  
+                       // console.log(el)  
                     return(
                         <>
                         <DogCard

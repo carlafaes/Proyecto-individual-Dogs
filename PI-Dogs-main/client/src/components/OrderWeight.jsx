@@ -2,20 +2,21 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import {orderByWeight} from '../actions/indexActions'
 
-export default function OrderByWeight({value}){
+export default function OrderByWeight({value,set}){
     const dispatch=useDispatch();
 
     function handlerFilterByWeight(e){
-        e.preventDefault();
         dispatch(orderByWeight(e.target.value));
         value(1)
+        set(`Ordenado ${e.target.value}`);
+        console.log(e.target.value)
     }
 
     return(
         <div>
-            <select onClick={(e)=> handlerFilterByWeight(e)}>
-                <option value='weight'>Weight</option>
-                <option value='min'>Weight Min</option>
+            <label>Weight</label>
+            <select onChange={(e)=> handlerFilterByWeight(e)}>
+                <option value='min' key={value}>Weight Min</option>
                 <option value='max'>Weight Max</option>
             </select>
         </div>

@@ -6,6 +6,6 @@ export const POST_DOG = "POST_DOG";
 export const ADD_DOG = "ADD_DOG";
 export const FILTER_BY_VALUE = "FILTER_BY_VALUE";
 export const FILTER_TEMPERAMENT = "FILTER_TEMPERAMENT";
-export const FILTER_CREATED = "FILTER_CREATED";
+export const FILTER_BREED = "FILTER_BREED";
 export const ORDER_BY = 'ORDER_BY';
 export const ORDER_BY_WEIGHT= 'ORDER_BY_WEIGHT';
