@@ -21,8 +21,15 @@ export default function SearchBar({value}){
     return(
         <div>
             <form onSubmit={onSubmit}>
-                <input type='text' placeholder="Buscar Raza.Por ejemplo:Alaskan Husky" value={search} onChange={onInputChange} />
-                <input type='submit' value='Buscar' onSubmit={onSubmit} />
+                <input 
+                type='text' 
+                placeholder="Buscar Raza.Por ejemplo:Alaskan Husky" 
+                value={search} 
+                onChange={onInputChange} />
+                <input 
+                type='submit' 
+                value='Buscar' 
+                onSubmit={onSubmit} />
             </form>
         </div>
     )

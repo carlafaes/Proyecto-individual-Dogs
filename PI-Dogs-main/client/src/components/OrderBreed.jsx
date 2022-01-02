@@ -13,6 +13,7 @@ export default function OrderBreed({value}){
 
     return(
         <div>
+            <label>Breed</label>
             <select onChange={(e) => handleFilterByBreed(e)}>
                 <option value='allDogs'>All dogs</option>
                 <option value='apiDogs'>Api dogs</option>

@@ -45,9 +45,7 @@ import SearchBar from "./SearchBar";
         setCurrentPage(1);
     }
     
-    // function handleFilterByValue(e){
-    //     dispatch(filterbyValue(e.target.value));
-    // }
+    
     
    
 
@@ -60,7 +58,9 @@ import SearchBar from "./SearchBar";
             <div>
                 <SearchBar value={setCurrentPage} />
             </div>
-           
+           <div>
+               <Link to='/createdDog'>Create Dog</Link>
+           </div>
             <div>
                 <OrderAlfab value={setCurrentPage} set={setOrder}/>
                 <OrderWeight value={setCurrentPage} set={setOrder}/>
@@ -74,10 +74,12 @@ import SearchBar from "./SearchBar";
                 paginated={paginated}
                 />
             </div>
+            <section>
             <div className='dosFiltros'>
                 <Temperament value={setCurrentPage}/>
                 <OrderBreed value={setCurrentPage}/>       
              </div>
+             </section>
             <div>
                     {currentDog && currentDog.map((el)=>{
                        // console.log(el)  
@@ -91,7 +93,8 @@ import SearchBar from "./SearchBar";
                             temperament={el.temperament}
                             temperaments={el.temperaments}
                             id={el.id} 
-                            /></>
+                            />
+                            </>
                             
                     ) 
                     

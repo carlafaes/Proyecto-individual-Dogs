@@ -53,8 +53,6 @@ export default function rootReducer(state= initialState,action){ //action(tiene 
          case FILTER_BREED:
             let filterBreed= state.dogs;
             let createdFilter= action.payload === 'createDogs'? filterBreed.filter((e)=> e.createdInDb) : filterBreed.filter((e)=> !e.createdInDb);
-            // console.log(filterBreed,'filterBreed variable')
-            // console.log('perros creados var', createdFilter)
             return{
                 ...state,
                 dogs: action.payload === 'allDogs'? filterBreed : createdFilter,
@@ -109,29 +107,6 @@ export default function rootReducer(state= initialState,action){ //action(tiene 
                filtered:stateDogs
             }
             
-            // const isNan= state.dogs.filter(data => !isNan(data.weight? data.weight[0]: data.weight_min));
-            // const orderWeight= action.payload === 'min'? isNan.sort(function(a,b){
-            //     if(parseInt(a.weight? a.weight[0] : a.weight_min)> parseInt(b.weight? b.weight[0] : b.weight_min)){
-            //         return 1;
-            //     }
-            //     if(parseInt(b.weight? b.weight[0]:b.weight_min) > parseInt(a.weight? a.weight[0] : a.weight_min)){
-            //         return -1;
-            //     }
-            //     return 0;
-            // }) :
-            // isNan.sort(function(a,b){
-            //     if(parseInt(a.weight? a.weight[0]: a.weight_min) > parseInt(b.weight? b.weight[0] : b.weight_min)){
-            //         return -1;
-            //     }
-            //     if(parseInt(b.weight? b.weight[0] : b.weight_min) > parseInt(a.weight? a.weight[0] : a.weight_min)){
-            //         return 1;
-            //     }
-            //     return 0;
-            // })
-            // return{
-            //     ...state,
-            //     dogs: action.payload === 'weight'? state.filtered : orderWeight
-            // }
           
       default:
            return state;

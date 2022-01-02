@@ -118,6 +118,7 @@ const reqApi= async function getApi(){
             weight,
             height,
             life_span,
+            createdInDb
           });
           let temperamentDb = await Temperament.findAll({
                  where: { name : temperaments }

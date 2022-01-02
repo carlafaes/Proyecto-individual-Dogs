@@ -4,7 +4,6 @@ import {
     GET_DETAIL,
     GET_TEMPERAMENTS,
     SEARCH_BY_NAME,
-    ADD_DOG,
     FILTER_TEMPERAMENT,
     FILTER_BREED,
     ORDER_BY,
@@ -32,6 +31,7 @@ export function getDetails(id){
         });
     };
 };
+export const unmountAllBreeds = () => ({type: 'UNMOUNT_ALL_BREEDS'}) 
 
 export function getTemperament(){
     return async(dispatch)=>{
@@ -55,29 +55,29 @@ export const searchByName= (name)=>{
   }
 
 
-export const addDog=({
-    name,
-    heightMin,
-    heightMax,
-    weightMin,
-    weightMax,
-    yearsMin,
-    yearsMax,
-    temperament,
-}) => {
-    return async(dispatch)=>{
-       const addGet= await axios.get('http://localhost:3001/dogs/',{
-            name,
-            height: heightMin + ' - ' + heightMax,
-            weight: weightMin+ ' - ' + weightMax,
-            lifeSpan: yearsMin + ' - ' + yearsMax + 'years',
-            temperament
-        });
-        dispatch({
-            type:ADD_DOG,
-        });
-    };
-};
+// export const addDog=({
+//     name,
+//     heightMin,
+//     heightMax,
+//     weightMin,
+//     weightMax,
+//     yearsMin,
+//     yearsMax,
+//     temperament,
+// }) => {
+//     return async(dispatch)=>{
+//        const addGet= await axios.get('http://localhost:3001/dogs/',{
+//             name,
+//             height: heightMin + ' - ' + heightMax,
+//             weight: weightMin+ ' - ' + weightMax,
+//             lifeSpan: yearsMin + ' - ' + yearsMax + 'years',
+//             temperament
+//         });
+//         dispatch({
+//             type:ADD_DOG,
+//         });
+//     };
+// };
 
 export function filterBreed(value){
     return{
@@ -113,5 +113,12 @@ export function orderByWeight(value){
     return{
         type:ORDER_BY_WEIGHT,
         payload:value,
+    }
+}
+
+export function addDog(payload){
+    return async function(dispatch){
+        const created= await axios.post('http://localhost:3001/dogs',payload);
+        return created;
     }
 }
