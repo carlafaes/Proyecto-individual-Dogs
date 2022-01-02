@@ -10,7 +10,7 @@ console.log(props)
     useEffect(()=> { 
         dispatch(getDetails(props.id))//accedo al id pasandole props al componente
         return () =>{
-            dispatch(unmountAllBreeds())
+            dispatch()
             console.log(dispatch)
         }
     },[dispatch,props.id])

@@ -11,6 +11,7 @@ export default function SearchBar({value}){
     function onSubmit(e){
         e.preventDefault(e);
         dispatch(searchByName(search))
+        setSearch('');
     }
 
     function onInputChange(e){
