@@ -109,7 +109,7 @@ const reqApi= async function getApi(){
 
 
     router.post("/dog", async (req, res) => {
-        const { name, height, weight, life_span,image, createdInDb, temperaments } = req.body;
+        const { name, height, weight, life_span,image, createdInDb, temperament } = req.body;
         try{
          
           if (!name || !height || !weight)
@@ -123,7 +123,7 @@ const reqApi= async function getApi(){
             createdInDb
           });
           let temperamentDb = await Temperament.findAll({
-                 where: { name : temperaments }
+                 where: { name : temperament }
         });
         dogCreated.addTemperament(temperamentDb)  
          console.log(temperamentDb); 

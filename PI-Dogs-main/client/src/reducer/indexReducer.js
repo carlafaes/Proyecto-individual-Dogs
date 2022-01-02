@@ -1,3 +1,4 @@
+import { filterBreed } from "../actions/indexActions";
 import {
     GET_DOGS,
     FILTER_BY_VALUE,
@@ -14,6 +15,7 @@ import {
 
 const initialState={
     dogs:[],
+    all:[],
     filtered:[],
     temperaments:[],
     detail:[]
@@ -25,14 +27,12 @@ export default function rootReducer(state= initialState,action){ //action(tiene 
             return{
                 ...state,
                 dogs: action.payload,
+                all: action.payload,
                 filtered:action.payload
             };
 
-        // case ADD_DOG:
-        //     return{
-        //         ...state,
-        //     };
-        
+      
+
         case FILTER_TEMPERAMENT:
           const filter = action.payload === 'temperament' ? state.filtered : state.filtered?.filter(data => data.temperament?.includes(action.payload));
           return{
@@ -51,11 +51,18 @@ export default function rootReducer(state= initialState,action){ //action(tiene 
                   dogs: action.payload,
                 };
          case FILTER_BREED:
-            let filterBreed= state.dogs;
-            let createdFilter= action.payload === 'createDogs'? filterBreed.filter((e)=> e.createdInDb) : filterBreed.filter((e)=> !e.createdInDb);
+            let filtBreed= state.all;
+            console.log(filtBreed)
+            let createdFilter= 
+            action.payload === 'allDogs'?
+            filtBreed:
+            action.payload === 'createdDogs'?
+            filtBreed.filter((e) => e.createdInDb) :
+            filtBreed.filter((e) =>!e.createdInDb)
+          
             return{
                 ...state,
-                dogs: action.payload === 'allDogs'? filterBreed : createdFilter,
+                dogs: createdFilter
 
             };
         case GET_DETAIL:

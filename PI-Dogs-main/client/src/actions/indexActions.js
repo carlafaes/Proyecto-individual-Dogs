@@ -9,7 +9,6 @@ import {
     UNMOUNT_ALL_BREEDS,
     ORDER_BY,
     ORDER_BY_WEIGHT,
-    ADD_DOG
   } from "./types";
 
 export function getDogs(){
@@ -57,31 +56,6 @@ export const searchByName= (name)=>{
        }
   }
 
-
-// export const addDog=({
-//     name,
-//     heightMin,
-//     heightMax,
-//     weightMin,
-//     weightMax,
-//     yearsMin,
-//     yearsMax,
-//     temperament,
-// }) => {
-//     return async(dispatch)=>{
-//        const addGet= await axios.get('http://localhost:3001/dogs/',{
-//             name,
-//             height: heightMin + ' - ' + heightMax,
-//             weight: weightMin+ ' - ' + weightMax,
-//             lifeSpan: yearsMin + ' - ' + yearsMax + 'years',
-//             temperament
-//         });
-//         dispatch({
-//             type:ADD_DOG,
-//         });
-//     };
-// };
-
 export function filterBreed(value){
     return{
         type: FILTER_BREED,
@@ -98,12 +72,6 @@ export function filterByTemperament(payload){
   
 }
 
-// export function filterbyValue(payload){
-//     return{
-//         type: FILTER_BY_VALUE,
-//         payload,
-//     };
-// }
 
 export function orderBy(value){
     return {

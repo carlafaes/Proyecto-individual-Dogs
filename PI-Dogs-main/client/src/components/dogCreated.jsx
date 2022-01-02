@@ -48,7 +48,7 @@ export default function DogCreated(){
     function handleDeleteTemperament(e){
         setInputForm({
             ...inputForm, 
-            temperament:[...inputForm.temperament.filter(temp => temp !== e.target.value)]
+            temperament:[...inputForm.temperament.filter(temp => temp !== e)]
         })
     }
 
@@ -56,12 +56,12 @@ export default function DogCreated(){
         e.preventDefault();
         let checkErr= [];
         console.log(checkErr)
-        if(inputForm.temperament.length < 1){
+        if(inputForm.temperament.length < 1){//asegura q haya temperament
             checkErr.push('requires at least one temperament')
         }
         //object.value devuelve un array con los valores correspondientes a las prop enum de un obj
         if(Object.values(errors).length || checkErr.length ){
-            return alert(Object.values(errors).concat(checkErr).join('\n'));
+            return alert(Object.values(errors).concat(checkErr).join('\n'));//controla errores
         }
 
         var succesDog= {
@@ -80,7 +80,6 @@ export default function DogCreated(){
         }
 
         dispatch(addDog(succesDog))
-        {console.log(succesDog)}
         alert('successfully created dog');
 
         
