@@ -1,13 +1,11 @@
 import { filterBreed } from "../actions/indexActions";
 import {
     GET_DOGS,
-    FILTER_BY_VALUE,
     SEARCH_BY_NAME,
     FILTER_BREED,
     FILTER_TEMPERAMENT,
     GET_TEMPERAMENTS,
     GET_DETAIL,
-    ADD_DOG,
     ORDER_BY,
     ORDER_BY_WEIGHT,
     UNMOUNT_ALL_BREEDS

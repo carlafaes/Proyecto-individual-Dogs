@@ -3,13 +3,18 @@ import { useDispatch,useSelector } from "react-redux";
 import { useState,useEffect } from "react";
 import { addDog, getTemperament,unmountAllBreeds } from "../actions/indexActions";
 import {Link, useNavigate} from 'react-router-dom'
+import { ValidateForm } from "./ValidateForm";
+// import { useParams } from "react-router";
+
+
 
 export default function DogCreated(){
     const dispatch=useDispatch();
     const history= useNavigate();
     const temperaments= useSelector((state) => state.temperaments)
     const [errors,setErrors] = useState({}) //estado local que arranca con un obj vacio
-
+    // const {id}=useParams;
+   
     useEffect(()=>{
         dispatch(getTemperament())
         return ()=>{
@@ -34,15 +39,14 @@ export default function DogCreated(){
         setInputForm({
             ...inputForm,
             [e.target.name] : e.target.value})
-        //aca va elñ set del validate
-        // setErrors(Validate({...input, [e.target.name]: e.target.value})) 
+        setErrors(ValidateForm({...inputForm, [e.target.name]: e.target.value})) 
     }
 
     function handleSelectTemperament(e){
         setInputForm({
             ...inputForm, 
             temperament:[...inputForm.temperament,e.target.value]})
-        // setErrors(Validate({...inputForm,temperament:e.target.value}))
+        setErrors(ValidateForm({...inputForm,temperament:e.target.value}))
     }
 
     function handleDeleteTemperament(e){
@@ -108,7 +112,7 @@ export default function DogCreated(){
             </div><div>
                     <section>
                         <h1>Create your own Dog</h1>
-                        <form key={546} onSubmit={(e) => { handleSubmit(e) } }>
+                        <form  onSubmit={(e) => { handleSubmit(e) } }>
                             <h4>Creation Form</h4>
                             <div>
                                 <input type='text' value={inputForm.name} name='name' placeholder="Enter a name" onChange={(e) => handleChange(e)}></input>
@@ -143,18 +147,26 @@ export default function DogCreated(){
                             </div>
 
                             <div>
-                             
-                                <input type='text' value={inputForm.image} name='image' placeholder="Enter an image" onChange={(e) => handleChange(e)}>
-                                </input>
+                             <img src=' /img/perro2.jpg' alt='perro2'/>
+                                {/* <input type='text' value={inputForm.image} name='image' placeholder="Enter an image" onChange={(e) => handleChange(e)}>
+                                </input> */}
                             </div>
                             <div>
                                 <select onChange={(e) => handleSelectTemperament(e)}>
-                                    <option value=''>Seleccione Temperamentos</option>
-                                    {temperaments.map((temp) => (<option key={temp.id} value={temp.name}>{temp.name}</option>))}
+                                    <option value=''>
+                                        Seleccione Temperamentos
+                                        </option>
+                                    {temperaments.map((temp) => (
+                                    <option 
+                                    key={temp.id} 
+                                    value={temp.name}>
+                                    {temp.name}
+                                    </option>))}
                                 </select>
                                 <ul>
                                     <li>
-                                        {inputForm.temperament.map(e => ' *' + e)}
+                                        {inputForm.temperament.map(e =>  e)}
+                                        
                                     </li>
                                 </ul>
                             </div>
@@ -162,7 +174,9 @@ export default function DogCreated(){
                             <br />
                         </form>
                         <div>
-                            {inputForm.temperament.map(e => <button onClick={() => handleDeleteTemperament(e)}>{e}x</button>
+                            {inputForm.temperament.map(e =>
+                             <button onClick={() => handleDeleteTemperament(e)}>{e} 
+                             </button>
                             )}
                         </div>
                     </section>

@@ -90,7 +90,7 @@ export function orderByWeight(value){
 export function addDog(payload){
     return async function(dispatch){
         const created= await axios.post('http://localhost:3001/dog',payload);
-        console.log(created)
+        // console.log(created)
         return created;
     }
 }
