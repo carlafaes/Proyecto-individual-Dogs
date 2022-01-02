@@ -8,8 +8,8 @@ import {
     GET_DETAIL,
     ADD_DOG,
     ORDER_BY,
-    ORDER_BY_WEIGHT
-    
+    ORDER_BY_WEIGHT,
+    UNMOUNT_ALL_BREEDS
   } from "../actions/types";
 
 const initialState={
@@ -109,7 +109,7 @@ export default function rootReducer(state= initialState,action){ //action(tiene 
         case 'UNMOUNT_ALL_BREEDS': 
             return {
                 ...state,
-                 detail: []
+                 
             }
             
           

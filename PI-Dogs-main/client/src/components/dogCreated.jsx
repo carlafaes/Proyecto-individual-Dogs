@@ -55,6 +55,7 @@ export default function DogCreated(){
     function handleSubmit(e){
         e.preventDefault();
         let checkErr= [];
+        console.log(checkErr)
         if(inputForm.temperament.length < 1){
             checkErr.push('requires at least one temperament')
         }
@@ -79,6 +80,7 @@ export default function DogCreated(){
         }
 
         dispatch(addDog(succesDog))
+        {console.log(succesDog)}
         alert('successfully created dog');
 
         
@@ -107,7 +109,7 @@ export default function DogCreated(){
             </div><div>
                     <section>
                         <h1>Create your own Dog</h1>
-                        <form onSubmit={(e) => { handleSubmit(e); } }>
+                        <form onSubmit={(e) => { handleSubmit(e) } }>
                             <h4>Creation Form</h4>
                             <div>
                                 <input type='text' value={inputForm.name} name='name' placeholder="Enter a name" onChange={(e) => handleChange(e)}></input>

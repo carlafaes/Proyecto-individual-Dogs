@@ -26,7 +26,7 @@ export function getDogs(){
 
 export function getDetails(id){
     return async (dispatch)=>{
-        const json=await axios.get(`http://localhost:3001/dogs/${id}`);
+        const json=await axios.get(`http://localhost:3001/dog/${id}`);
         
         return dispatch({
             type: GET_DETAIL,
@@ -121,7 +121,7 @@ export function orderByWeight(value){
 
 export function addDog(payload){
     return async function(dispatch){
-        const created= await axios.post('http://localhost:3001/dogs',payload);
+        const created= await axios.post('http://localhost:3001/dog',payload);
         console.log(created)
         return created;
     }

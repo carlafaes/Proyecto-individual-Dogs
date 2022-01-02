@@ -109,12 +109,14 @@ const reqApi= async function getApi(){
 
 
     router.post("/dog", async (req, res) => {
+        const { name, height, weight, life_span,image, createdInDb, temperaments } = req.body;
         try{
-          const { name, height, weight, life_span, createdInDb, temperaments } = req.body;
+         
           if (!name || !height || !weight)
             return res.status(404).send("The name, height and weight are required");
           const dogCreated = await Dog.create({
             name,
+            image,
             weight,
             height,
             life_span,
@@ -124,7 +126,7 @@ const reqApi= async function getApi(){
                  where: { name : temperaments }
         });
         dogCreated.addTemperament(temperamentDb)  
-        // console.log(temperamentDb); 
+         console.log(temperamentDb); 
           return res.status(200).json("The dog has been successfully created");
         }
       
