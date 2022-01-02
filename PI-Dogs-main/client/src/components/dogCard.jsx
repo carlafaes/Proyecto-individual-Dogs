@@ -4,10 +4,10 @@ import {Link} from 'react-router-dom';
 export default function dogCard({name,image,temperament,weight,id}){
     return(
         <><div className='dogCard'>
-             <img src={image} alt='dogCard' className='cardImg' width = "400px" height="270px" />
+             <img src={image} alt='dogCard' className='cardImg' width = "300px" height="270px" />
             <h3>{name}</h3>
             <h3>{temperament}</h3>
-            <Link to={`/${id}`}>
+            <Link to={`/home/${id}`}>
             <button className='masInfo'> Más Info </button>
             </Link>
              <h1>Temperament</h1>

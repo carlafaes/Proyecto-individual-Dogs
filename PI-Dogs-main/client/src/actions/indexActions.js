@@ -6,8 +6,10 @@ import {
     SEARCH_BY_NAME,
     FILTER_TEMPERAMENT,
     FILTER_BREED,
+    UNMOUNT_ALL_BREEDS,
     ORDER_BY,
-    ORDER_BY_WEIGHT
+    ORDER_BY_WEIGHT,
+    ADD_DOG
   } from "./types";
 
 export function getDogs(){
@@ -25,6 +27,7 @@ export function getDogs(){
 export function getDetails(id){
     return async (dispatch)=>{
         const json=await axios.get(`http://localhost:3001/dogs/${id}`);
+        
         return dispatch({
             type: GET_DETAIL,
             payload: json.data
@@ -119,6 +122,7 @@ export function orderByWeight(value){
 export function addDog(payload){
     return async function(dispatch){
         const created= await axios.post('http://localhost:3001/dogs',payload);
+        console.log(created)
         return created;
     }
 }

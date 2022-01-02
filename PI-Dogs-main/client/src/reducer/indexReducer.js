@@ -28,10 +28,10 @@ export default function rootReducer(state= initialState,action){ //action(tiene 
                 filtered:action.payload
             };
 
-        case ADD_DOG:
-            return{
-                ...state,
-            };
+        // case ADD_DOG:
+        //     return{
+        //         ...state,
+        //     };
         
         case FILTER_TEMPERAMENT:
           const filter = action.payload === 'temperament' ? state.filtered : state.filtered?.filter(data => data.temperament?.includes(action.payload));
@@ -105,6 +105,11 @@ export default function rootReducer(state= initialState,action){ //action(tiene 
             return{
                 ...state,
                filtered:stateDogs
+            }
+        case 'UNMOUNT_ALL_BREEDS': 
+            return {
+                ...state,
+                 detail: []
             }
             
           
