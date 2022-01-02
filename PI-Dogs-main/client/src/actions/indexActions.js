@@ -25,7 +25,7 @@ export function getDogs(){
 
 export function getDetails(id){
     return async (dispatch)=>{
-        const json=await axios.get(`http://localhost:3001/dog/${id}`);
+        const json=await axios.get(`http://localhost:3001/dogs/${id}`);
         
         return dispatch({
             type: GET_DETAIL,

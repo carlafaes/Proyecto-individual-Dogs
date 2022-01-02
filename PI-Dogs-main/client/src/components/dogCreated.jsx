@@ -108,7 +108,7 @@ export default function DogCreated(){
             </div><div>
                     <section>
                         <h1>Create your own Dog</h1>
-                        <form onSubmit={(e) => { handleSubmit(e) } }>
+                        <form key={546} onSubmit={(e) => { handleSubmit(e) } }>
                             <h4>Creation Form</h4>
                             <div>
                                 <input type='text' value={inputForm.name} name='name' placeholder="Enter a name" onChange={(e) => handleChange(e)}></input>
@@ -143,6 +143,7 @@ export default function DogCreated(){
                             </div>
 
                             <div>
+                             
                                 <input type='text' value={inputForm.image} name='image' placeholder="Enter an image" onChange={(e) => handleChange(e)}>
                                 </input>
                             </div>
