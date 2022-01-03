@@ -115,6 +115,7 @@ const reqApi= async function getApi(){
             
                     }
                 })
+                res.send(getDb)
             }
             
             // if(isNaN(id)) DBDogs= await reqDb(id);
