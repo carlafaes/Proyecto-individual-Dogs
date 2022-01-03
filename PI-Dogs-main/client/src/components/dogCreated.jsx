@@ -4,7 +4,7 @@ import { useState,useEffect } from "react";
 import { addDog, getTemperament,unmountAllBreeds } from "../actions/indexActions";
 import {Link, useNavigate} from 'react-router-dom'
 import { ValidateForm } from "./ValidateForm";
-// import { useParams } from "react-router";
+
 
 
 
@@ -13,7 +13,7 @@ export default function DogCreated(){
     const history= useNavigate();
     const temperaments= useSelector((state) => state.temperaments)
     const [errors,setErrors] = useState({}) //estado local que arranca con un obj vacio
-    // const {id}=useParams;
+  
    
     useEffect(()=>{
         dispatch(getTemperament())
@@ -148,8 +148,6 @@ export default function DogCreated(){
 
                             <div>
                              <img src=' /img/perro2.jpg' alt='perro2'/>
-                                {/* <input type='text' value={inputForm.image} name='image' placeholder="Enter an image" onChange={(e) => handleChange(e)}>
-                                </input> */}
                             </div>
                             <div>
                                 <select onChange={(e) => handleSelectTemperament(e)}>

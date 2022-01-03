@@ -3,11 +3,8 @@ const {Router, application} = require('express');
 const router = Router();
 const axios= require('axios');
 const { Dog,Temperament } = require( '../db');
-//const server= require('../app')
 const {Op} = require('sequelize');
 const {API_KEY}= process.env;
-//const {getApi, getDbInfo, getAllInfo} = require('../controllers/infoController');
-//const {reqApi} = require('../controllers/infoController');
 
 
 
@@ -83,25 +80,8 @@ const reqApi= async function getApi(){
         }
     })
 
-    // router.get('/dog/:id', async(req,res,next)=>{
-    //     const {id}=req.params;
-        
-    //     try{
-    //         const aDogs= await reqAllDogs();
-
-    //         if(id){
-    //             let breedId= await aDogs.filter(el => el.id === id);
-    //             breedId.length ? res.status(200).json(breedId) : res.json({data: {error: 'No se encontro'}})
-    //         }
-    //     }
-    //     catch(error){
-    //         console.log(error)
-    //     }
-    // })
-
     router.get('/dogs/:id', async(req,res,next)=>{
         const {id}= req.params;
-        let DBDogs;
         try{
             if(isNaN(id)){
                 const getDb= await Dog.findByPk(id,{
@@ -117,11 +97,6 @@ const reqApi= async function getApi(){
                 })
                 res.send(getDb)
             }
-            
-            // if(isNaN(id)) DBDogs= await reqDb(id);
-            // if(DBDogs && DBDogs.length > 8){
-            //     res.status(200).send(DBDogs[0]);
-            // }
             else{
                 let api= await reqApi(undefined);
                 // console.log(api)
