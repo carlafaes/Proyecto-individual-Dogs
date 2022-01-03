@@ -42,12 +42,12 @@ const reqApi= async function getApi(){
         });
     }
   
-    const reqAllDogs= async()=>{
-        const apiReq= await reqApi();
-        const dbReq= await reqDb();
-        const allReq= await apiReq.concat(dbReq);
-        return allReq;
-    }
+    // const reqAllDogs= async()=>{
+    //     const apiReq= await reqApi();
+    //     const dbReq= await reqDb();
+    //     const allReq= await apiReq.concat(dbReq);
+    //     return allReq;
+    // }
         
 
     router.get('/dogs', async(req,res,next)=>{
