@@ -11,6 +11,7 @@ import OrderWeight from './OrderWeight';
 import OrderBreed from "./OrderBreed";
 import SearchBar from "./SearchBar";
 
+
  export default function Home(){
     const dispatch= useDispatch();
     const allDogs= useSelector((state)=> state.dogs);//trae del reducer el estado dogs
@@ -50,7 +51,7 @@ import SearchBar from "./SearchBar";
    
 
     return(
-        <Fragment> <div>
+        <Fragment> <div className="divlanding">
                 <button onClick={e => {handleClick(e)}}>
                     Refresh
                 </button>

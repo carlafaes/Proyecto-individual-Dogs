@@ -147,7 +147,7 @@ export default function DogCreated(){
                             </div>
 
                             <div>
-                             <img src=' /img/perro2.jpg' alt='perro2'/>
+                             <img src='/img/perro2.jpg' alt='perro2'/>
                             </div>
                             <div>
                                 <select onChange={(e) => handleSelectTemperament(e)}>
