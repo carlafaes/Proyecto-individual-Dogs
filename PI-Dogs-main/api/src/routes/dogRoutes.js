@@ -83,30 +83,58 @@ const reqApi= async function getApi(){
         }
     })
 
-    
+    // router.get('/dog/:id', async(req,res,next)=>{
+    //     const {id}=req.params;
+        
+    //     try{
+    //         const aDogs= await reqAllDogs();
+
+    //         if(id){
+    //             let breedId= await aDogs.filter(el => el.id === id);
+    //             breedId.length ? res.status(200).json(breedId) : res.json({data: {error: 'No se encontro'}})
+    //         }
+    //     }
+    //     catch(error){
+    //         console.log(error)
+    //     }
+    // })
 
     router.get('/dogs/:id', async(req,res,next)=>{
         const {id}= req.params;
         let DBDogs;
         try{
-            if(id.length) DBDogs= await reqDb(id);
-            if(DBDogs && DBDogs.length > 8){
-                res.status(200).send(DBDogs[0]);
+            if(isNaN(id)){
+                const getDb= await Dog.findByPk(id,{
+                    include:
+                    {
+                        model:Temperament,
+                        attributes: ['name'],
+                        through:{
+                            attributes: [],
+                        },
+            
+                    }
+                })
             }
+            
+            // if(isNaN(id)) DBDogs= await reqDb(id);
+            // if(DBDogs && DBDogs.length > 8){
+            //     res.status(200).send(DBDogs[0]);
+            // }
             else{
                 let api= await reqApi(undefined);
-                console.log(api)
+                // console.log(api)
                 const found= api.find(e => e.id === Number(id));
                 found? res.send(found) : res.status(405).json({msg:'no existe'})
-                
-            }
+              }
            
         }
         catch(err){
             next(err);
         }
     })
-
+           
+    
 
     router.post("/dog", async (req, res) => {
         const { name, height, weight, life_span,image, createdInDb, temperament } = req.body;
@@ -126,12 +154,12 @@ const reqApi= async function getApi(){
                  where: { name : temperament }
         });
         dogCreated.addTemperament(temperamentDb)  
-         console.log(temperamentDb); 
+        //  console.log(temperamentDb); 
           return res.status(200).json("The dog has been successfully created");
         }
       
         catch(err){
-          console.log(err)
+         
           res.status(404).json(err)
         }
     })

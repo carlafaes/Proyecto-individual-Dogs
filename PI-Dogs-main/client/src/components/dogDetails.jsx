@@ -4,22 +4,37 @@ import { useDispatch,useSelector } from "react-redux";
 import { getDetails, unmountAllBreeds} from "../actions/indexActions";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router";
+import axios from "axios";
+import { useState } from "react";
 
 
 
 
 
 export default function Detail(props){
-    
+    // const [breed, setBreed] = useState([]);//
     const dispatch= useDispatch();
     const {id}=useParams()
 // console.log(props)
     useEffect(()=> { 
-        dispatch(getDetails(id))//accedo al id pasandole props al componente props.match.params.id
-        return () =>{
-            dispatch(unmountAllBreeds())
-            // console.log(dispatch)
-        }
+    //     try{
+    //         const det= async ()=>{
+    //             let {data: breed} = await axios.get(
+    //                 `http://localhost:3001/dogs/${id}` 
+    //             );
+    //             setBreed(breed);
+    //         } }
+    //         catch(error){
+    //             console.log(error)
+    //         }
+       
+    // },[dispatch,id])
+        dispatch(getDetails(id))
+        console.log(id)//accedo al id pasandole props al componente props.match.params.id
+        // return () =>{
+        //     dispatch(unmountAllBreeds())
+        //     // console.log(dispatch)
+        // }
     },[dispatch,id])
 
 

@@ -1,4 +1,4 @@
-import { filterBreed } from "../actions/indexActions";
+
 import {
     GET_DOGS,
     SEARCH_BY_NAME,

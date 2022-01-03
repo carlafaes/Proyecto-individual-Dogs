@@ -14,7 +14,7 @@ import SearchBar from "./SearchBar";
  export default function Home(){
     const dispatch= useDispatch();
     const allDogs= useSelector((state)=> state.dogs);//trae del reducer el estado dogs
-    const temperament=useSelector((state)=>state.temperament);
+    // const temperament=useSelector((state)=>state.temperament);
     const [currentPage,setCurrentPage]=useState(1);//guarda la pagina actual, y tiene la constante que setea la pagina actual
     const [dogsXPage,setDogsXPage]= useState(8);//dogs por pagina
 
