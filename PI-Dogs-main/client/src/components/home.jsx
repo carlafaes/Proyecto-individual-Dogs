@@ -62,29 +62,29 @@ import './Home.css';
             <div className="searchbar">
                 <SearchBar  value={setCurrentPage} />
             </div>
-            
-            <div className="nav" id="btn-menu">
-            <div className="nav" >
-               <h3 id="btn-menu">Menu</h3>
-            </div>
+            <div>
+            <h3 className="menu" id="menu_side">Menu</h3>
+           </div>            
+            <div className=" nav" id="menu_side">
+           
               <ul className="list">
-                    <li className="list__item">
-                    <Link className="createDog" to='/createdDog'>Create Dog</Link>
-                    </li>
-                    <li className="list__item">
+                    <li className="list__item" id="word_list">
                     <OrderAlfab value={setCurrentPage} set={setOrder}/>
                     </li>
-                    <li className="list__item">
+                    <li className="list__item" id="word_list">
                     <OrderWeight value={setCurrentPage} set={setOrder}/>
                     </li>
-                    <li className="list__item">
+                    <li className="list__item" id="word_list">
                     <Temperament value={setCurrentPage}/>
                     </li>
-                    <li className="list__item">
+                    <li className="list__item" id="word_list">
                     <OrderBreed value={setCurrentPage}/>
                     </li>
+                    <li className="list__item" id="word_list">
+                    <Link className="createDog" id="word_list" to='/createdDog'>Create Dog</Link>
+                    </li>
                 </ul>
-                 </div>
+             </div>
         
             <div>
             <Paged
