@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Tourney:ital,wght@0,100;1,100&display=swap');
 *{
    margin:0%;
    padding: 0%;
@@ -32,7 +33,7 @@
    display:inline-block;
    color:rgb(185, 148, 226);
    font-size: 60px; 
-   font-family: Geneva, Verdana, sans-serif;
+   font-family: 'Tourney', cursive;
    letter-spacing: 4px;
 } 
 
@@ -70,7 +71,7 @@
    position: absolute;
    color:rgb(182, 129, 212);
    font-size: 24px;
-   font-family:fantasy;
+   font-family: 'Tourney', cursive;
    text-decoration: none;
    margin-left: 390px;
    margin-top: 30px;

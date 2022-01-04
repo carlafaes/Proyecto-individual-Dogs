@@ -62,10 +62,14 @@ import './Home.css';
             <div className="searchbar">
                 <SearchBar  value={setCurrentPage} />
             </div>
-            <div className="nav">
-                <ul className="list">
+            
+            <div className="nav" id="btn-menu">
+            <div className="nav" >
+               <h3 id="btn-menu">Menu</h3>
+            </div>
+              <ul className="list">
                     <li className="list__item">
-                    <Link to='/createdDog'>Create Dog</Link>
+                    <Link className="createDog" to='/createdDog'>Create Dog</Link>
                     </li>
                     <li className="list__item">
                     <OrderAlfab value={setCurrentPage} set={setOrder}/>
@@ -80,8 +84,7 @@ import './Home.css';
                     <OrderBreed value={setCurrentPage}/>
                     </li>
                 </ul>
-                
-            </div>
+                 </div>
         
             <div>
             <Paged

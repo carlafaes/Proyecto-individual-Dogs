@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Tourney:ital,wght@0,100;1,100&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -8,12 +10,26 @@
     width: 100%;
     height: 100vh;
     background: linear-gradient(to bottom, black, rgb(35, 3, 43));
+    font-family: 'Tourney', cursive;
 }
 .nav{
-    background: burlywood;
-    width: 300px;
-    height: 80%;
+    background: linear-gradient(to bottom, rgb(122, 14, 126), rgb(35, 3, 43));
+    margin-right: -200px;
+    width: 50px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: widht 1s;
+    background-position: right bottom;
+    background-size: 400% 100%;
+    transition: all 1s ease-out;
+    transition-timing-function: linear;
+  opacity: 1;
+}
 
+.nav:hover{
+    width: 300px;
 }
 
 .list{
@@ -25,12 +41,36 @@
 }
 
 .list__item{
+    margin-top: 30px;
     list-style: none;
     width: 100%;
     text-align: center;
     overflow: hidden;
-    color: blueviolet;
     display: block;
     padding: 15px 0;
     text-decoration: none;
+  
 }
+.list__item:hover{
+    color: white;
+}
+
+.createDog{
+    text-decoration: none;
+    color: blueviolet;
+    transition: color 300ms;
+}
+
+.createDog:hover{
+    color: white;
+}
+.menu{
+    position: absolute;
+    left: 50px;
+    top: 10px;
+    color: rgb(219, 194, 221);
+    cursor: pointer;
+    transition:1s;
+}
+
+

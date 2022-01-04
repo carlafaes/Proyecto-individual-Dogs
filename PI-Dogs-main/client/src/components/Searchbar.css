@@ -1,7 +1,13 @@
 .contSearch{
-    position: absolute;
-    height: 60px;
-    padding-left: 750px;
-    margin-top: 0%;
-    
+   
+   width: 100%;
+   height: 80px;
+   background: transparent;
+   position: absolute;
+   padding-right: 10%;
+   top:0;
+   z-index: 200;
+   
 }
+
+

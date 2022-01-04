@@ -4,6 +4,8 @@ import { useDispatch } from "react-redux";
 import { searchByName } from "../actions/indexActions";
 import './Searchbar.css';
 
+
+
 export default function SearchBar({value}){
     // console.log('este es el console del searchbar', {value})
     const [search,setSearch] =useState('');
@@ -21,7 +23,9 @@ export default function SearchBar({value}){
     }
 
     return(
+        
         <div className="contSearch">
+          
             <form onSubmit={onSubmit}>
                 <input 
                 className="search" 
