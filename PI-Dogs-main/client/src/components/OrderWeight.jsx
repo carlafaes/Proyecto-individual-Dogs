@@ -13,11 +13,12 @@ export default function OrderByWeight({value,set}){
     }
 
     return(
-        <div>
+        <div className="order">
             <label>Weight</label>
-            <select onChange={(e)=> handlerFilterByWeight(e)}>
-                <option value='min' key={value}>Weight Min</option>
-                <option value='max'>Weight Max</option>
+            <select className="order_select" onChange={(e)=> handlerFilterByWeight(e)}>
+                {/* <option>⚖️</option> */}
+                <option className="order_option" value='min' key={value}>Weight Min</option>
+                <option className="order_option" value='max'>Weight Max</option>
             </select>
         </div>
     )

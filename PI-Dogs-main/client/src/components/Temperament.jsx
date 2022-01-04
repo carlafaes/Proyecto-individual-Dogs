@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector,useDispatch } from "react-redux";
 import { filterByTemperament } from "../actions/indexActions";
+import './Order.css';
 
 export default function Temperament({value}){
     const allTemperament= useSelector((state) => state.temperaments);
@@ -13,12 +14,12 @@ export default function Temperament({value}){
 
     
 return(
-    <div>
+    <div className="order">
         <label>Temperament</label>
-         <select value='temperament' className="filterByTemp" onChange={e => handleFilterByTemperament(e)}>
-            
-                    {allTemperament && allTemperament.map((el)=>(
-                     <option value={el.name} key={el.id}>
+         <select className="order_select" value='temperament' onChange={e => handleFilterByTemperament(e)}>
+                    <option className="order_option" >🐕‍🦺🐕</option>
+                    {allTemperament && allTemperament.map((el)=>( 
+                     <option  className="order_option"  value={el.name} key={el.id}>
                         {el.name}
                     </option>
                     ))

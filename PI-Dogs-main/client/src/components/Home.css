@@ -13,7 +13,7 @@
     font-family: 'Tourney', cursive;
 }
 .nav{
-    background: linear-gradient(to bottom, blueviolet,transparent);
+    background: linear-gradient(to bottom, rgb(36, 6, 65),transparent);
     margin-top: -600px;
     margin-left: 0px;
     width: 18%;

@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { filterBreed } from "../actions/indexActions";
+import './Order.css';
 
 
 export default function OrderBreed({value}){
@@ -12,12 +13,13 @@ export default function OrderBreed({value}){
     }
 
     return(
-        <div>
+        <div className="order">
             <label>Breed</label>
-            <select onChange={(e) => handleFilterByBreed(e)}>
-                <option value='allDogs'>All dogs</option>
-                <option value='apiDogs'>Api dogs</option>
-                <option value='createdDogs'>Created dogs</option>
+            <select className="order_select" onChange={(e) => handleFilterByBreed(e)}>
+                {/* <option className="order_option"  >🐶</option> */}
+                <option className="order_option" value='allDogs'>All dogs</option>
+                <option className="order_option" value='apiDogs'>Api dogs</option>
+                <option className="order_option" value='createdDogs'>Created dogs</option>
             </select>
         </div>
     )

@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import {orderBy} from '../actions/indexActions'
+import './Order.css';
 
 export default function OrderAlfab({value,set}){
     const dispatch=useDispatch();
@@ -12,12 +13,12 @@ export default function OrderAlfab({value,set}){
     }
 
     return(
-        <div>
+        <div className="order" >
         <label>Order</label>
-        <select onClick={(e)=> handleFilterByAZ(e)}>
-            
-            <option value='AZ'>A-Z</option>
-            <option value='ZA'>Z-A</option>
+        <select className="order_select"   onClick={(e)=> handleFilterByAZ(e)}>
+            {/* <option className="order_option"  >A-Z</option> */}
+            <option  className="order_option" value='AZ'>A-Z</option>
+            <option className="order_option"  value='ZA'>Z-A</option>
         </select>
         </div>
     )

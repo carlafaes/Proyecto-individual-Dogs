@@ -30,7 +30,7 @@ export default function SearchBar({value}){
                 <input 
                 className="search" 
                 type='text' 
-                placeholder="Buscar Raza.Por ejemplo:Alaskan Husky" 
+                placeholder="Por ejemplo:Alaskan Husky" 
                 value={search} 
                 onChange={onInputChange} />
                 <input 
