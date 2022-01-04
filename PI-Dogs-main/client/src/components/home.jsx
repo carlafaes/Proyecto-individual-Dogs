@@ -10,6 +10,7 @@ import OrderAlfab from "./OrderAlfab";
 import OrderWeight from './OrderWeight';
 import OrderBreed from "./OrderBreed";
 import SearchBar from "./SearchBar";
+import './Home.css';
 
 
  export default function Home(){
@@ -51,8 +52,10 @@ import SearchBar from "./SearchBar";
    
 
     return(
-        <Fragment> <div className="contGeneral">
-                <button onClick={e => {handleClick(e)}}>
+        <Fragment>
+            <div className="contGeneral">
+            <div>
+                <button className="refresh" onClick={e => {handleClick(e)}}>
                     Refresh
                 </button>
             </div>
@@ -80,6 +83,7 @@ import SearchBar from "./SearchBar";
         
             <div>
             <Paged
+               className='paged'
                 key='6555'
                 dogsXPage={dogsXPage}
                 allDogs={allDogs.length}
@@ -107,6 +111,7 @@ import SearchBar from "./SearchBar";
                     })
                 }
                     </div>
+                    </div> 
         
         </Fragment>
     )

@@ -1,3 +1,16 @@
-.divlanding{
-    background-color: brown;
+.contGeneral{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, black, rgb(35, 3, 43));
+}
+.searchbar{
+    position: absolute;
+}
+.menu{
+    position: absolute;
+}
+
+.paged{
+    position: absolute;
 }
