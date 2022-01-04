@@ -60,21 +60,23 @@ import './Home.css';
                 </button>
             </div>
             <div className="searchbar">
-                <Link to='/createdDog'>Create Dog</Link>
                 <SearchBar  value={setCurrentPage} />
             </div>
-            <div className="menu">
-                <ul>
-                    <li>
+            <div className="nav">
+                <ul className="list">
+                    <li className="list__item">
+                    <Link to='/createdDog'>Create Dog</Link>
+                    </li>
+                    <li className="list__item">
                     <OrderAlfab value={setCurrentPage} set={setOrder}/>
                     </li>
-                    <li>
+                    <li className="list__item">
                     <OrderWeight value={setCurrentPage} set={setOrder}/>
                     </li>
-                    <li>
+                    <li className="list__item">
                     <Temperament value={setCurrentPage}/>
                     </li>
-                    <li>
+                    <li className="list__item">
                     <OrderBreed value={setCurrentPage}/>
                     </li>
                 </ul>
