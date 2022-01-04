@@ -51,37 +51,42 @@ import SearchBar from "./SearchBar";
    
 
     return(
-        <Fragment> <div className="divlanding">
+        <Fragment> <div className="contGeneral">
                 <button onClick={e => {handleClick(e)}}>
                     Refresh
                 </button>
             </div>
-            <div>
-                <SearchBar value={setCurrentPage} />
+            <div className="searchbar">
+                <Link to='/createdDog'>Create Dog</Link>
+                <SearchBar  value={setCurrentPage} />
             </div>
-           <div>
-               <Link to='/createdDog'>Create Dog</Link>
-           </div>
-            <div>
-                <OrderAlfab value={setCurrentPage} set={setOrder}/>
-                <OrderWeight value={setCurrentPage} set={setOrder}/>
+            <div className="menu">
+                <ul>
+                    <li>
+                    <OrderAlfab value={setCurrentPage} set={setOrder}/>
+                    </li>
+                    <li>
+                    <OrderWeight value={setCurrentPage} set={setOrder}/>
+                    </li>
+                    <li>
+                    <Temperament value={setCurrentPage}/>
+                    </li>
+                    <li>
+                    <OrderBreed value={setCurrentPage}/>
+                    </li>
+                </ul>
+                
             </div>
         
             <div>
-                <Paged
+            <Paged
                 key='6555'
                 dogsXPage={dogsXPage}
                 allDogs={allDogs.length}
                 paginated={paginated}
                 />
             </div>
-            <section>
-            <div className='dosFiltros'>
-                <Temperament value={setCurrentPage}/>
-                <OrderBreed value={setCurrentPage}/>       
-             </div>
-             </section>
-            <div>
+            <div className="dogCard">
                     {currentDog && currentDog.map((el)=>{
                        // console.log(el)  
                     return(
