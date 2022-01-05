@@ -13,13 +13,19 @@ import {
 
 export function getDogs(){
     return async function(dispatch){
-        let json= await axios.get('http://localhost:3001/dogs',{
+        try{
+            let json= await axios.get('http://localhost:3001/dogs',{
 
-        });
-        return dispatch({
-            type: GET_DOGS,
-            payload: json.data
-        });
+            });
+            return dispatch({
+                type: GET_DOGS,
+                payload: json.data
+            });
+        }
+        catch(err){
+            console.logs(err);
+        }
+       
     };
 };
 
@@ -47,14 +53,21 @@ export function getTemperament(){
 
 export const searchByName= (name)=>{
     return async(dispatch)=>{
-        const getName= await axios.get(`http://localhost:3001/dogs?name=${name}`)
-        // console.log(getName, 'error getname')
-            return dispatch({
-                type: SEARCH_BY_NAME,
-                payload: getName.data,
-            })
-       }
-  }
+        try{
+            const getName= await axios.get(`http://localhost:3001/dogs?name=${name}`)
+            console.log(getName, 'error getname')
+                return dispatch({
+                    type: SEARCH_BY_NAME,
+                    payload: getName.data,
+                })
+           }
+        catch(err){
+          console.log(err);
+        }
+   }
+      }
+    
+       
 
 export function filterBreed(value){
     return{
