@@ -42,12 +42,6 @@ const reqApi= async function getApi(){
         });
     }
   
-    // const reqAllDogs= async()=>{
-    //     const apiReq= await reqApi();
-    //     const dbReq= await reqDb();
-    //     const allReq= await apiReq.concat(dbReq);
-    //     return allReq;
-    // }
         
 
     router.get('/dogs', async(req,res,next)=>{
@@ -67,6 +61,7 @@ const reqApi= async function getApi(){
                     where:{
                         name:{
                             [Op.iLike]: '%' + name + '%'
+                            //realiza una consulta parcial a la db sin diferenciar mayusculas y minusculas
                         }
                     }
                 })
@@ -84,7 +79,7 @@ const reqApi= async function getApi(){
         const {id}= req.params;
         try{
             if(isNaN(id)){
-                const getDb= await Dog.findByPk(id,{
+                const getDb= await Dog.findByPk(id,{//se realiza cuando el id no es numerico
                     include:
                     {
                         model:Temperament,
@@ -98,8 +93,8 @@ const reqApi= async function getApi(){
                 res.send(getDb)
             }
             else{
-                let api= await reqApi(undefined);
-                // console.log(api)
+                let api= await reqApi();//undefined
+                 console.log(api)
                 const found= api.find(e => e.id === Number(id));
                 found? res.send(found) : res.status(405).json({msg:'no existe'})
               }
