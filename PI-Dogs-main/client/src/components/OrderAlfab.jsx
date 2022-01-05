@@ -14,8 +14,8 @@ export default function OrderAlfab({value,set}){
 
     return(
         <div className="order" >
-        <label>Order</label>
-        <select className="order_select"   onClick={(e)=> handleFilterByAZ(e)}>
+        <label className="list__item">Order</label>
+        <select className="order_select" id='btn-order'   onClick={(e)=> handleFilterByAZ(e)}>
             {/* <option className="order_option"  >A-Z</option> */}
             <option  className="order_option" value='AZ'>A-Z</option>
             <option className="order_option"  value='ZA'>Z-A</option>

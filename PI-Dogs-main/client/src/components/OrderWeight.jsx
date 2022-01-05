@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import {orderByWeight} from '../actions/indexActions'
+import './Order.css';
 
 export default function OrderByWeight({value,set}){
     const dispatch=useDispatch();
@@ -14,8 +15,8 @@ export default function OrderByWeight({value,set}){
 
     return(
         <div className="order">
-            <label>Weight</label>
-            <select className="order_select" onChange={(e)=> handlerFilterByWeight(e)}>
+            <label className="list__item">Weight</label>
+            <select className="order_select" id='btn-order' onChange={(e)=> handlerFilterByWeight(e)}>
                 {/* <option>⚖️</option> */}
                 <option className="order_option" value='min' key={value}>Weight Min</option>
                 <option className="order_option" value='max'>Weight Max</option>

@@ -15,8 +15,8 @@ export default function Temperament({value}){
     
 return(
     <div className="order">
-        <label>Temperament</label>
-         <select className="order_select" value='temperament' onChange={e => handleFilterByTemperament(e)}>
+        <label className="list__item">Temperament</label>
+         <select className="order_select" id='btn-order' value='temperament' onChange={e => handleFilterByTemperament(e)}>
                     <option className="order_option" >🐕‍🦺🐕</option>
                     {allTemperament && allTemperament.map((el)=>( 
                      <option  className="order_option"  value={el.name} key={el.id}>

@@ -1,4 +1,5 @@
 import React  from "react";
+import './Paged.css'
 
 export default function Paginado({dogsXPage,allDogs,paginated}){
     const pageNumbers=[] //en principio comienza como un array vacio, al q se le pushearan los numeros de pagina

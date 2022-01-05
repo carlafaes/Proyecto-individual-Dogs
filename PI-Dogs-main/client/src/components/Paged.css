@@ -1,0 +1,7 @@
+.paged{
+    position: absolute;
+    display: flex;
+    margin-left: 33%;
+    list-style: none;
+
+}
