@@ -61,10 +61,9 @@ import menu from '../img/menu.png'
                 </button>
             </div>
             <div className="searchbar">
-                <SearchBar  value={setCurrentPage} />
+                <SearchBar key='1658'  value={setCurrentPage} />
             </div>
             <div>
-            {/* <h3 className="menu" id="menu_side">Menu</h3>*/}
             <img className="menu" src={menu} alt='menu'/>
            </div>             
            
@@ -72,16 +71,16 @@ import menu from '../img/menu.png'
            
               <ul className="list">
                     <li className="list__item" id="word_list">
-                    <OrderAlfab value={setCurrentPage} set={setOrder}/>
+                    <OrderAlfab key='1268' value={setCurrentPage} set={setOrder}/>
                     </li>
                     <li className="list__item" id="word_list">
-                    <OrderWeight value={setCurrentPage} set={setOrder}/>
+                    <OrderWeight key='1257' value={setCurrentPage} set={setOrder}/>
                     </li>
                     <li className="list__item" id="word_list">
-                    <Temperament value={setCurrentPage}/>
+                    <Temperament key='1230' value={setCurrentPage}/>
                     </li>
                     <li className="list__item" id="word_list">
-                    <OrderBreed key={1221} value={setCurrentPage}/>
+                    <OrderBreed key='1221' value={setCurrentPage}/>
                     </li>
                     <li className="list__item" id="word_list">
                     <Link className="createDog" id="word_list" to='/createdDog'>Create Dog</Link>

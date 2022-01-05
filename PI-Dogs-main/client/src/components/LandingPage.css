@@ -12,15 +12,15 @@
   
 .cont{
    display: flex;
-  justify-content: space-between;
   align-items: center;
   height: 100%; 
   
 }
 .banner_imgP{
-   width: 400px;
+   width: 600px;
    height: 400px;
    display: block;
+   margin-left: 800px;
    animation: movimiento 2.5s linear infinite;
    padding-right: 170px;
 }
@@ -70,16 +70,17 @@
 .banner_btn-landing{
    position: absolute;
    color:rgb(182, 129, 212);
-   font-size: 24px;
+   font-size: 27px;
    font-family: 'Tourney', cursive;
    text-decoration: none;
-   margin-left: 390px;
+   margin-left: 340px;
    margin-top: 30px;
    padding: 15px 30px;
    letter-spacing: 4px;
    transition: 1s;
    overflow: hidden;
    background-color:transparent;
+   border-radius: 15px;
 }
 
 .banner_btn-landing:hover{
