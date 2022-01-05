@@ -11,6 +11,7 @@ import OrderWeight from './OrderWeight';
 import OrderBreed from "./OrderBreed";
 import SearchBar from "./SearchBar";
 import './Home.css';
+import menu from '../img/menu.png'
 
 
  export default function Home(){
@@ -56,15 +57,17 @@ import './Home.css';
             <div className="contGeneral">
             <div>
                 <button className="refresh" onClick={e => {handleClick(e)}}>
-                    Refresh
+                Reload
                 </button>
             </div>
             <div className="searchbar">
                 <SearchBar  value={setCurrentPage} />
             </div>
             <div>
-            <h3 className="menu" id="menu_side">Menu</h3>
-           </div>            
+            {/* <h3 className="menu" id="menu_side">Menu</h3>*/}
+            <img className="menu" src={menu} alt='menu'/>
+           </div>             
+           
             <div className=" nav" id="menu_side">
            
               <ul className="list">

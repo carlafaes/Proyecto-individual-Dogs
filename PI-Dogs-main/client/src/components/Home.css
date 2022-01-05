@@ -29,13 +29,11 @@
     z-index: 6;
 }
 .menu{
-    width: 9%;
-    height: 10px;
-    font-size: 25px;
+    width: 60px;
+    margin-left: -660px;
     padding-top: 10px;
-    margin-right: 0px;
     position: fixed;
-    z-index: 1;
+    z-index: 4;
     color: rgb(175, 35, 185);
     text-align: center;
     cursor: pointer;
@@ -94,3 +92,19 @@
      margin-top:10px;
  }
 
+.refresh{
+    position: absolute;
+    color:rgb(182, 129, 212);
+    font-size: 15px;
+    font-family: fantasy;
+    text-decoration: none;
+    margin-left: -668px;
+    margin-top: 110px;
+    padding: 10px 10px;
+    letter-spacing: 4px;
+    transition: 1s;
+    overflow: hidden;
+    background:linear-gradient(to right, rgb(133, 73, 194),rgb(36, 3, 68));
+    border-radius: 7px;
+   
+}

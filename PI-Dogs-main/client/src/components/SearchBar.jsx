@@ -24,9 +24,10 @@ export default function SearchBar({value}){
 
     return(
         
-        <div className="contSearch">
+        <div >
           
             <form onSubmit={onSubmit}>
+                <div className="contSearch">
                 <input 
                 className="search" 
                 type='text' 
@@ -38,6 +39,7 @@ export default function SearchBar({value}){
                 type='submit' 
                 value='Search🔍' 
                 onSubmit={onSubmit} />
+                </div>
             </form>
         </div>
     )
