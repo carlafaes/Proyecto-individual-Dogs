@@ -1,7 +1,30 @@
 .paged{
     position: absolute;
     display: flex;
-    margin-left: 33%;
+    margin-left: 20%;
+    margin-top: 1020px;
+    font-size: 25px;
     list-style: none;
-
+    background: linear-gradient(to right, rgb(35, 14, 56),rgb(36, 3, 68));
+  
+   
 }
+
+
+
+.num{
+    background:linear-gradient(to right, rgb(133, 73, 194),rgb(36, 3, 68));;
+    font-size: 20px;
+    padding-left: 10px 10px;
+    margin-right: 10px;
+    transition: 0.4s;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.num:hover{
+    background: rgb(181, 28, 252);
+    box-shadow: 0 0 10px rgb(82, 21, 117),0 0 40px rgb(112, 13, 112), 0 0 80px rgb(129, 30, 196);
+    transition-delay: 0.2s;
+ }
+ 
