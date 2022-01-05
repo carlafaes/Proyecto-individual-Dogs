@@ -54,7 +54,7 @@ import menu from '../img/menu.png'
 
     return(
         <Fragment>
-            <div className="contGeneral">
+        <div className="contGeneral">
             <div>
                 <button className="refresh" onClick={e => {handleClick(e)}}>
                 Reload
@@ -64,8 +64,8 @@ import menu from '../img/menu.png'
                 <SearchBar  value={setCurrentPage} />
             </div>
             <div>
-            <img className="menu" src={menu} alt='menu'/>
-           </div>             
+              <img className="menu" src={menu} alt='menu'/>
+            </div>             
            
             <div className=" nav" id="menu_side">
            
@@ -86,22 +86,22 @@ import menu from '../img/menu.png'
                     <Link className="createDog" id="word_list" to='/createdDog'>Create Dog</Link>
                     </li>
                 </ul>
-             </div>
+            </div>
             
             <div>
-            {Object.values(allDogs).length >0 ?
-            <Paged
+             {Object.values(allDogs).length >0 ?
+              <Paged
                className='paged'
                 dogsXPage={dogsXPage}
                 allDogs={allDogs.length}
                 paginated={paginated}
                 />
                 : <div className="loading"> Loading</div>
-            }
+             }
             </div>
           
             <div className="dogCard">
-                    {currentDog ? currentDog.map((el)=>{
+                    {currentDog && currentDog.map((el)=>{
                        // console.log(el)  
                     return(
                         <>
@@ -118,10 +118,10 @@ import menu from '../img/menu.png'
                             
                     ) 
                     
-                    }): <div className="loading"> Loading</div>
+                    })
                 }
-                    </div>
-                    </div> 
+            </div>
+        </div> 
         
         </Fragment>
     )

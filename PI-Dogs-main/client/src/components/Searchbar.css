@@ -35,7 +35,7 @@
    height: 36px;
    border-color: black;
    transition: 1s;
-   
+   font-size: 20px;
 }
 .search:hover{
    background: rgb(181, 28, 252);
