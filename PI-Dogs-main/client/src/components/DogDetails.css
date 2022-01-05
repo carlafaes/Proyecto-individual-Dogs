@@ -191,3 +191,31 @@ z-index: 6;
     transition: 1s;
     transition-delay: 0.75s;
  }
+
+ :root{
+ --primary:rgb(241, 161, 252);
+ --secondary:rgb(35, 6, 39);
+ }
+ .loading{
+    position: absolute;
+    margin-left: 40%;
+    margin-top: 200px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: salmon;
+    font-size: 20px;
+
+    width: 200px;
+    height:200px;
+    border: solid var(--secondary) 14px;
+    border-top-color:var(--primary);
+    border-radius: 50%;
+    
+   animation: spin 2s linear infinite;
+ }
+
+ @keyframes spin {
+    to{
+       transform:  rotate(360deg);
+    }
+   
+ }
