@@ -61,7 +61,7 @@ import menu from '../img/menu.png'
                 </button>
             </div>
             <div className="searchbar">
-                <SearchBar key='1658'  value={setCurrentPage} />
+                <SearchBar  value={setCurrentPage} />
             </div>
             <div>
             <img className="menu" src={menu} alt='menu'/>
@@ -71,16 +71,16 @@ import menu from '../img/menu.png'
            
               <ul className="list">
                     <li className="list__item" id="word_list">
-                    <OrderAlfab key='1268' value={setCurrentPage} set={setOrder}/>
+                    <OrderAlfab value={setCurrentPage} set={setOrder}/>
                     </li>
                     <li className="list__item" id="word_list">
-                    <OrderWeight key='1257' value={setCurrentPage} set={setOrder}/>
+                    <OrderWeight value={setCurrentPage} set={setOrder}/>
                     </li>
                     <li className="list__item" id="word_list">
-                    <Temperament key='1230' value={setCurrentPage}/>
+                    <Temperament value={setCurrentPage}/>
                     </li>
                     <li className="list__item" id="word_list">
-                    <OrderBreed key='1221' value={setCurrentPage}/>
+                    <OrderBreed value={setCurrentPage}/>
                     </li>
                     <li className="list__item" id="word_list">
                     <Link className="createDog" id="word_list" to='/createdDog'>Create Dog</Link>
@@ -91,7 +91,6 @@ import menu from '../img/menu.png'
             <div>
             <Paged
                className='paged'
-                key='6555'
                 dogsXPage={dogsXPage}
                 allDogs={allDogs.length}
                 paginated={paginated}
