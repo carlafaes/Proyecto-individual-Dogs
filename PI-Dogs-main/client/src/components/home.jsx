@@ -101,7 +101,9 @@ import menu from '../img/menu.png'
             </div>
           
             <div className="dogCard">
-                    {currentDog && currentDog.map((el)=>{
+                    {Array.isArray(currentDog) === false?
+                    <h1 className="not_dog">Dog not found 😞</h1>:
+                    currentDog && currentDog.map((el)=>{
                        // console.log(el)  
                     return(
                         <>

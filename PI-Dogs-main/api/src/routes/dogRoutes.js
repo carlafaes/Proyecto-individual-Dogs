@@ -55,7 +55,9 @@ const reqApi= async function getApi(){
             }
             if(name){
                 const api= await reqApi();
+                // console.log(api)
                 const nameQuery=await  api.filter(data => data.name.toLowerCase().includes(name.toLowerCase()))
+                // console.log(nameQuery)
                 const db= await Dog.findAll({
                     include: Temperament,
                     where:{

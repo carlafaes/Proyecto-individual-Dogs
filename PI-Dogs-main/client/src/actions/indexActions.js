@@ -55,7 +55,7 @@ export const searchByName= (name)=>{
     return async(dispatch)=>{
         try{
             const getName= await axios.get(`http://localhost:3001/dogs?name=${name}`)
-            console.log(getName, 'error getname')
+            console.log(getName.data, 'error getname')
                 return dispatch({
                     type: SEARCH_BY_NAME,
                     payload: getName.data,
