@@ -4,7 +4,7 @@
    margin-top: 9px;
    border-radius: 7px;
    background:linear-gradient(to right, rgb(133, 73, 194),rgb(36, 3, 68));
-   margin-left: 500px;
+   margin-left: 530px;
 
 }
 .submit{
@@ -12,6 +12,7 @@
    font-size: 15px;
    font-family: fantasy;
    text-decoration: none;
+  
    padding: 10px 10px;
    letter-spacing: 4px;
    transition: 0.4s;

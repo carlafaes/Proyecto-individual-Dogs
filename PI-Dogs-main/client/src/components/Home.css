@@ -5,12 +5,23 @@
     padding: 0;
     box-sizing: border-box;
 }
+.fondo{
+    width: 105%;
+    height: 160vh;
+    background-size: 1500px 1160px;
+    /* background-image: url("https://st4.depositphotos.com/22719282/39379/i/600/depositphotos_393791004-stock-photo-black-and-white-cat-paw.jpg"); */
+    /* background: linear-gradient(to bottom, black, rgb(35, 3, 43)); */
+    /* background-image: url("https://wallpaperstock.net/wallpapers/thumbs1/11510.jpg"); */
+    background-image: url("https://www.wallpapertip.com/wmimgs/36-369620_space-tumblr-wallpaper-hd-with-wallpapers-high-quality.jpg");
+ }
+   
 
 .contGeneral{
     width: 100%;
     height: 1100px;
-    background: linear-gradient(to bottom, black, rgb(35, 3, 43));
+    /* background: linear-gradient(to bottom, black, rgb(35, 3, 43)); */
     font-family: 'Tourney', cursive;
+
 }
 .nav{
     background: linear-gradient(to bottom, rgb(18, 18, 19),rgb(15, 2, 27, 0.9));

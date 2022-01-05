@@ -54,6 +54,7 @@ import menu from '../img/menu.png'
 
     return(
         <Fragment>
+            <div className="fondo">
         <div className="contGeneral">
             <div>
                 <button className="refresh" onClick={e => {handleClick(e)}}>
@@ -124,7 +125,7 @@ import menu from '../img/menu.png'
                 }
             </div>
         </div> 
-        
+        </div>
         </Fragment>
     )
 }
