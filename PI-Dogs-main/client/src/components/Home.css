@@ -114,3 +114,27 @@
     box-shadow: 0 0 10px rgb(82, 21, 117),0 0 40px rgb(161, 66, 161), 0 0 80px rgb(129, 30, 196);
     transition-delay: 0.2s;
  }
+
+ .loading{
+    position: absolute;
+    margin-left: 40%;
+    margin-top: 200px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: salmon;
+    font-size: 20px;
+
+    width: 200px;
+    height:200px;
+    border: solid var(--secondary) 14px;
+    border-top-color:var(--primary);
+    border-radius: 50%;
+    
+   animation: spin 2s linear infinite;
+ }
+
+ @keyframes spin {
+    to{
+       transform:  rotate(360deg);
+    }
+   
+ }

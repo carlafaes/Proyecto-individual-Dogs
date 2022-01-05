@@ -87,17 +87,21 @@ import menu from '../img/menu.png'
                     </li>
                 </ul>
              </div>
-        
+            
             <div>
+            {Object.values(allDogs).length >0 ?
             <Paged
                className='paged'
                 dogsXPage={dogsXPage}
                 allDogs={allDogs.length}
                 paginated={paginated}
                 />
+                : <div className="loading"> Loading</div>
+            }
             </div>
+          
             <div className="dogCard">
-                    {currentDog && currentDog.map((el)=>{
+                    {currentDog ? currentDog.map((el)=>{
                        // console.log(el)  
                     return(
                         <>
@@ -114,7 +118,7 @@ import menu from '../img/menu.png'
                             
                     ) 
                     
-                    })
+                    }): <div className="loading"> Loading</div>
                 }
                     </div>
                     </div> 

@@ -40,7 +40,9 @@ return(
                 <div className="info_text4">
                 <h4 >Weight [kg]: {myDog.weight[0]+ '-' + myDog.height[1]}</h4>
                 </div>
-            </div> : <div className="loading"> Loading</div>
+            </div> 
+            : 
+            <div className="loading"> Loading</div>
         }
         <Link to= '/home'>
             
