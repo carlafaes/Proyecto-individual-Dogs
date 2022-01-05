@@ -93,7 +93,7 @@ const reqApi= async function getApi(){
                 res.send(getDb)
             }
             else{
-                let api= await reqApi();//undefined
+                let api= await reqApi(undefined);//
                  console.log(api)
                 const found= api.find(e => e.id === Number(id));
                 found? res.send(found) : res.status(405).json({msg:'no existe'})

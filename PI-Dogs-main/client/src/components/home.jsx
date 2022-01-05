@@ -81,7 +81,7 @@ import menu from '../img/menu.png'
                     <Temperament value={setCurrentPage}/>
                     </li>
                     <li className="list__item" id="word_list">
-                    <OrderBreed value={setCurrentPage}/>
+                    <OrderBreed key={1221} value={setCurrentPage}/>
                     </li>
                     <li className="list__item" id="word_list">
                     <Link className="createDog" id="word_list" to='/createdDog'>Create Dog</Link>

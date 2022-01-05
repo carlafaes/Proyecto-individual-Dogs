@@ -42,12 +42,12 @@ display: flex;
 justify-content: center;
 align-items: center;
 height: 40vh;
-width: 60vh;
-
+width: 50vh;
+margin-left: 40px;
 } 
 
 .figure{
-margin-top: 60px;
+margin-top: 45px;
 position:relative;
 height: 100%;
 width:300px;
