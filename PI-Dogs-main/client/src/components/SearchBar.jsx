@@ -36,7 +36,7 @@ export default function SearchBar({value}){
                 <input 
                 className="submit"
                 type='submit' 
-                value='Buscar' 
+                value='Search🔍' 
                 onSubmit={onSubmit} />
             </form>
         </div>

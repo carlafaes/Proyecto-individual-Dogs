@@ -4,10 +4,11 @@
  }
 .dogCard{
  width: 90%;
- margin-top: 28px;
+ margin-top: 10px;
  margin-left: 32px;
  margin-right:5px;
  margin-bottom: 20px;
+ padding-top: 30px;
  display: grid;
  grid-template-columns: repeat(1,1fr);
  
@@ -90,3 +91,20 @@ cursor: pointer;
     margin-left: 20px;
     padding-top: 300px;
 }
+.masInfo{
+    color: rgb(118, 106, 124);
+    font-family:fantasy;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 10px 15px;
+    letter-spacing: 1px;
+    transition: 0.5s;
+    overflow: hidden;
+    background-color:rgb(85, 32, 116);
+    border-radius: 7px;
+}
+.masInfo:hover{
+    background: rgb(181, 28, 252);
+    box-shadow: 0 0 10px rgb(82, 21, 117),0 0 40px rgb(112, 13, 112), 0 0 80px rgb(129, 30, 196);
+    transition-delay: 0.2s;
+ }

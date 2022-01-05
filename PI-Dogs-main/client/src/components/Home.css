@@ -8,7 +8,7 @@
 
 .contGeneral{
     width: 100%;
-    height: 100%;
+    height: 1100px;
     background: linear-gradient(to bottom, black, rgb(35, 3, 43));
     font-family: 'Tourney', cursive;
 }

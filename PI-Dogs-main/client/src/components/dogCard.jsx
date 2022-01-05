@@ -17,7 +17,7 @@ export default function dogCard({name,image,temperament,weight,id}){
             <div className='info'>
                 <Link to={`/home/${id}`}>
                 <button className='masInfo'>
-                     Más Info 
+                🖱️Click here 
                 </button>
                 </Link>
            </div>
