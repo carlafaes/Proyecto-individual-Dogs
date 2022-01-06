@@ -215,7 +215,7 @@
    grid-template-columns: auto auto ;
    background-color: transparent;
    width: 500px;
-   height: 400px;
+   height: 100px;
    padding-top: 20px;
  }
 
@@ -279,20 +279,23 @@
    list-style: none;
    width: 100px;
    border-radius: 3px;
-   color: blanchedalmond;
+   color: rgb(216, 141, 29);
    background:linear-gradient(to right, rgb(40, 11, 70),rgb(36, 3, 68));
    
 }
 
-.op_temper{
+.button_temp{
    font-family: monospace;
-   width: 50px;
+   width: 110px;
+   padding: 2px 2px 2px 2px;
    color: blanchedalmond;
-   background:linear-gradient(to right, rgb(133, 73, 194),rgb(36, 3, 68));
+   background:linear-gradient(to right, rgb(133, 73, 194),rgb(189, 172, 206));
    position: relative;
-   border-radius: 3px;
-   height: 20px;
+   border-radius: 1px;
+   height: 30px;
    border-color: black;
+   margin-left: 5px;
+   margin-top: -25px;
    transition: 1s;
    font-size: 17px;
    border-radius: 5px;
@@ -307,4 +310,8 @@
    font-family: 'Tourney', cursive;
    letter-spacing: 4px;
    text-shadow: 2px 2px 8px #000000;
+}
+
+.div_order{
+   margin-top: 20px;
 }

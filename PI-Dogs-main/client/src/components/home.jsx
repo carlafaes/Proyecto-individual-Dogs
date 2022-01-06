@@ -113,10 +113,10 @@ import menu from '../img/menu.png'
                     currentDog && currentDog.map((el)=>{
                        // console.log(el)
                     return(
-                        <>
+                        <div key={el.id}>
                         
                         <DogCard
-                            key={el.id}
+                            
                             name={el.name}
                             image={el.image}
                             weight={el.weight? el.weight[0] : el.weight_min}
@@ -124,8 +124,8 @@ import menu from '../img/menu.png'
                             temperaments={el.temperaments}
                             id={el.id}
                             />
-                        
-                            </>
+                        </div>
+                            
 
                     )
 

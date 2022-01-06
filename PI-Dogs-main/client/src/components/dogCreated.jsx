@@ -125,10 +125,12 @@ export default function DogCreated(){
                             <h4 className="titulo_form">Creation Form</h4>
                             </div>
                         <div className="dogs_details">
-                            <div>
+                            <div className="div_order">
                                 <input className="input" type='text' value={inputForm.name} name='name' placeholder="Enter a name" onChange={(e) => handleChange(e)}></input>
                                 {errors.name && (<p className="p">{errors.name}</p>)}
                             </div>
+
+                            <div className="div_order">
                             <div >
                                 
                                 <input className="input" type='text' value={inputForm.life_spanMin} name='life_spanMin' placeholder="Enter minimum life expectancy" onChange={(e) => { handleChange(e); } }></input>
@@ -139,6 +141,9 @@ export default function DogCreated(){
                                 <input className="input"  type='text' value={inputForm.life_spanMax} name='life_spanMax' placeholder="Enter maximum life expectancy" onChange={(e) => { handleChange(e); } }></input>
                                 {errors.life_spanMax && (<p className="p">{errors.life_spanMax}</p>)}
                             </div>
+                            </div>
+
+                            <div className="div_order">
                             <div >
                                 <input className="input"  type='text' value={inputForm.heightMin} name='heightMin' placeholder="Enter the minimum height" onChange={(e) => { handleChange(e); } }></input>
                                 {errors.heightMin && (<p className="p">{errors.heightMin}</p>)}
@@ -148,7 +153,9 @@ export default function DogCreated(){
                                 <input className="input" type='text' value={inputForm.heightMax} name='heightMax' placeholder="Enter the maximum height" onChange={(e) => { handleChange(e); } }></input>
                                 {errors.heightMax && (<p className="p">{errors.heightMax}</p>)}
                             </div>
+                            </div>
 
+                            <div className="div_order">
                             <div >
 
                                 <input className="input" type='text' value={inputForm.weightMin} name='weightMin' placeholder="Enter the minimum weight" onChange={(e) => { handleChange(e); } }></input>
@@ -159,21 +166,24 @@ export default function DogCreated(){
                                 <input  className="input" type='text' value={inputForm.weightMax} name='weightMax' placeholder="Enter the maximum weight" onChange={(e) => { handleChange(e); } }></input>
                                 {errors.weightMax && (<p className="p">{errors.weightMax}</p>)}
                             </div>
-                       
+                            </div>
+                            
+                            <div className="div_order">
                             <div className="temperament">
                                 <select className="s_temperament" onChange={(e) => handleSelectTemperament(e)}>
                                     <option  value=''> Seleccione Temperamentos</option>
                                     {temperaments.map((temp) => (
-                                    <option className="op_temper"  key={temp.id} value={temp.name}>
+                                    <option className="op_temper"  key={Math.random(temp.id)} value={temp.name}>
                                     {temp.name}
                                     </option>))}
                                 </select>
-                                <ul>
+                                {/* <ul>
                                     <li className="choice" >
                                         {inputForm.temperament.map(e =>  e)}
                                         
                                     </li>
-                                </ul>
+                                </ul> */}
+                            </div>
                             </div>
                          </div>
                         </form>
@@ -193,7 +203,7 @@ export default function DogCreated(){
                        
                         <div>
                             {inputForm.temperament.map(e =>
-                             <button className="button_temp" onClick={() => handleDeleteTemperament(e)}>{e} 
+                             <button key={Math.random(e)} className="button_temp" onClick={() => handleDeleteTemperament(e)}>{e} 
                              </button>
                             )}
                         </div>

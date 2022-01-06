@@ -13,6 +13,7 @@ export default function OrderAlfab({value,set}){
     }
 
     return(
+        
         <div className="order" >
         <label className="list__item">Order</label>
         <select className="order_select" id='btn-order'   onClick={(e)=> handleFilterByAZ(e)}>
