@@ -4,7 +4,8 @@ import { useState,useEffect } from "react";
 import { addDog, getTemperament,unmountAllBreeds } from "../actions/indexActions";
 import {Link, useNavigate} from 'react-router-dom'
 import { ValidateForm } from "./ValidateForm";
-
+import './DogCreated.css';
+import perro3 from '../img/perro2.jpg'
 
 
 
@@ -105,75 +106,94 @@ export default function DogCreated(){
         return(
             <><div>
                 <Link to='/home'>
-                    <button>
+                    <button className="button_home">
+                    <span id='span1'></span>
+                    <span id='span2'></span>
+                    <span id='span3'></span>
+                    <span id='span4'></span> 
                         Go Home
                     </button>
                 </Link>
-            </div><div>
-                    <section>
-                        <h1>Create your own Dog</h1>
-                        <form  onSubmit={(e) => { handleSubmit(e) } }>
-                            <h4>Creation Form</h4>
-                            <div>
-                                <input type='text' value={inputForm.name} name='name' placeholder="Enter a name" onChange={(e) => handleChange(e)}></input>
-                                {errors.name && (<p>{errors.name}</p>)}
-                            </div>
-                            <div>
-                                <input type='text' value={inputForm.life_spanMin} name='life_spanMin' placeholder="Enter minimum life expectancy" onChange={(e) => { handleChange(e); } }></input>
-                                {errors.life_spanMin && (<p>{errors.life_spanMin}</p>)}
-                            </div>
-                            <div>
-                                <input type='text' value={inputForm.life_spanMax} name='life_spanMax' placeholder="Enter maximum life expectancy" onChange={(e) => { handleChange(e); } }></input>
-                                {errors.life_spanMax && (<p>{errors.life_spanMax}</p>)}
-                            </div>
-                            <div>
-                                <input type='text' value={inputForm.heightMin} name='heightMin' placeholder="Enter the minimum height" onChange={(e) => { handleChange(e); } }></input>
-                                {errors.heightMin && (<p>{errors.heightMin}</p>)}
-                            </div>
+            </div>
+            <div className="fondo2">
+                    <section className="container">
+                        <h1 className="titulo">Create your own Dog</h1>
+                     <div className="cont">    
+                        <form  className="cont_form" onSubmit={(e) => { handleSubmit(e) } }>
 
                             <div>
-                                <input type='text' value={inputForm.heightMax} name='heightMax' placeholder="Enter the maximum height" onChange={(e) => { handleChange(e); } }></input>
-                                {errors.heightMax && (<p>{errors.heightMax}</p>)}
+                            <h4 className="titulo_form">Creation Form</h4>
+                            </div>
+                        <div className="dogs_details">
+                            <div>
+                                <input className="input" type='text' value={inputForm.name} name='name' placeholder="Enter a name" onChange={(e) => handleChange(e)}></input>
+                                {errors.name && (<p className="p">{errors.name}</p>)}
+                            </div>
+                            <div >
+                                
+                                <input className="input" type='text' value={inputForm.life_spanMin} name='life_spanMin' placeholder="Enter minimum life expectancy" onChange={(e) => { handleChange(e); } }></input>
+                                {errors.life_spanMin && (<p className="p">{errors.life_spanMin}</p>)}
+                            </div>
+                            <div >
+                                
+                                <input className="input"  type='text' value={inputForm.life_spanMax} name='life_spanMax' placeholder="Enter maximum life expectancy" onChange={(e) => { handleChange(e); } }></input>
+                                {errors.life_spanMax && (<p className="p">{errors.life_spanMax}</p>)}
+                            </div>
+                            <div >
+                                <input className="input"  type='text' value={inputForm.heightMin} name='heightMin' placeholder="Enter the minimum height" onChange={(e) => { handleChange(e); } }></input>
+                                {errors.heightMin && (<p className="p">{errors.heightMin}</p>)}
                             </div>
 
-                            <div>
-                                <input type='text' value={inputForm.weightMin} name='weightMin' placeholder="Enter the minimum weight" onChange={(e) => { handleChange(e); } }></input>
-                                {errors.weightMin && (<p>{errors.weightMin}</p>)}
+                            <div >
+                                <input className="input" type='text' value={inputForm.heightMax} name='heightMax' placeholder="Enter the maximum height" onChange={(e) => { handleChange(e); } }></input>
+                                {errors.heightMax && (<p className="p">{errors.heightMax}</p>)}
                             </div>
 
-                            <div>
-                                <input type='text' value={inputForm.weightMax} name='weightMax' placeholder="Enter the maximum weight" onChange={(e) => { handleChange(e); } }></input>
-                                {errors.weightMax && (<p>{errors.weightMax}</p>)}
+                            <div >
+
+                                <input className="input" type='text' value={inputForm.weightMin} name='weightMin' placeholder="Enter the minimum weight" onChange={(e) => { handleChange(e); } }></input>
+                                {errors.weightMin && (<p className="p">{errors.weightMin}</p>)}
                             </div>
 
-                            <div>
-                             <img src='/img/perro2.jpg' alt='perro2'/>
+                            <div >
+                                <input  className="input" type='text' value={inputForm.weightMax} name='weightMax' placeholder="Enter the maximum weight" onChange={(e) => { handleChange(e); } }></input>
+                                {errors.weightMax && (<p className="p">{errors.weightMax}</p>)}
                             </div>
-                            <div>
-                                <select onChange={(e) => handleSelectTemperament(e)}>
-                                    <option value=''>
-                                        Seleccione Temperamentos
-                                        </option>
+                       
+                            <div className="temperament">
+                                <select className="s_temperament" onChange={(e) => handleSelectTemperament(e)}>
+                                    <option  value=''> Seleccione Temperamentos</option>
                                     {temperaments.map((temp) => (
-                                    <option 
-                                    key={temp.id} 
-                                    value={temp.name}>
+                                    <option className="op_temper"  key={temp.id} value={temp.name}>
                                     {temp.name}
                                     </option>))}
                                 </select>
                                 <ul>
-                                    <li>
+                                    <li className="choice" >
                                         {inputForm.temperament.map(e =>  e)}
                                         
                                     </li>
                                 </ul>
                             </div>
-                            <button type='submit' onSubmit={(e) => handleSubmit(e)}>Create Dog</button>
-                            <br />
+                         </div>
                         </form>
+                     </div>
+                        <div>
+                             <img className="img_create" src={perro3} alt='perro3'/>
+                        </div>
+                           
+                            <button className="button_create" type='submit' onSubmit={(e) => handleSubmit(e)}>
+                            <span id='span1'></span>
+                            <span id='span2'></span>
+                            <span id='span3'></span>
+                            <span id='span4'></span> 
+                                Create Dog
+                            </button>
+                            
+                       
                         <div>
                             {inputForm.temperament.map(e =>
-                             <button onClick={() => handleDeleteTemperament(e)}>{e} 
+                             <button className="button_temp" onClick={() => handleDeleteTemperament(e)}>{e} 
                              </button>
                             )}
                         </div>

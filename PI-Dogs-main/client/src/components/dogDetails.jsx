@@ -26,7 +26,7 @@ return(
             {Object.values(myDog).length >0 ?
             <div className="contenedor_card">
                 <h1 className="name">{myDog.name}</h1>
-                <img className="img" src={myDog.image? myDog.image : '/img/perro2.jpg'}/>
+                <img className="img" alt="imgDog" src={myDog.image? myDog.image : '/img/perro2.jpg'}/>
                 {/* este caso es para cuando la api y la DB traen diferente la info, entonces: myBreed no está creado en la DB? (o sea es de la api?), entonces q me traiga myBreed.genre pq en la api está como genre y es un array de strings le agrego un espacio pq sino las trae todas pegadas.Si no q mapee el genres de la DB q es un array de obj*/}
                 <div className="info_text1">
                 <h4 >Temperament: {!myDog.createdInDb ? myDog.temperament : myDog.temperaments.map(e => e.name + '.')}</h4> 

@@ -4,8 +4,8 @@ import { filterBreed } from "../actions/indexActions";
 import './Order.css';
 
 
-export default function OrderBreed({value}){
-    console.log({value});
+export default function OrderBreed(){
+    // console.log({value});
     const dispatch= useDispatch();
 
     function handleFilterByBreed(e){

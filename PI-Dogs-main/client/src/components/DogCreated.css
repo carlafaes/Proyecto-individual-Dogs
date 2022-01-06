@@ -1,0 +1,310 @@
+
+
+.fondo2{
+    /* width: 105%;
+    height: 160vh; */
+    background-size: 1500px 1200px;
+    /* background-image: url("https://st4.depositphotos.com/22719282/39379/i/600/depositphotos_393791004-stock-photo-black-and-white-cat-paw.jpg"); */
+    /* background: linear-gradient(to bottom, black, rgb(35, 3, 43)); */
+    /* background-image: url("https://wallpaperstock.net/wallpapers/thumbs1/11510.jpg"); */
+    background-image: url("https://www.wallpapertip.com/wmimgs/36-369620_space-tumblr-wallpaper-hd-with-wallpapers-high-quality.jpg");
+ 
+  z-index: 1;
+  width: 1340px;
+  height: 800px;
+}
+
+.img_create{
+    position: fixed;
+    margin-left: 80px;
+    margin-top: -450px;
+    transition: all 500ms ease-out;
+    border-radius: 0px,15px,25px rgba(0,0,0,0.50);
+    height: 370px;
+    width:370px;
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 30px 30px 10px rgba(0,0,0,0.50);
+    z-index: 12;
+}
+
+
+.button_home{
+    position: absolute;
+    color:rgb(187, 151, 207);
+    font-size: 20px;
+    font-family: 'Tourney', cursive;
+    text-decoration: none;
+    margin-left: -620px;
+    margin-top: 10px;
+    padding: 15px 10px;
+    letter-spacing: 1px;
+    transition: 1s;
+    overflow: hidden;
+    background-color:rgba(22, 7, 14, 0.692);
+    z-index: 50;
+    border-radius: 10px;
+ }
+ 
+ .button_home:hover{
+    background: rgb(181, 28, 252);
+    box-shadow: 0 0 10px rgb(82, 21, 117),0 0 40px rgb(112, 13, 112), 0 0 80px rgb(129, 30, 196);
+    transition-delay: 1s;
+ }
+ 
+ .button_home span{
+    position: absolute;
+    display: block;
+ 
+ }
+ 
+ #span1{
+    top: 0%;
+    left: -100%;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent,rgb(241, 161, 252));
+ }
+ 
+ .button_home:hover #span1{
+    left: 100%;
+    transition: 1s;
+ }
+ 
+ #span3{
+    bottom: 0%;
+    right: -100%;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(270deg, transparent,rgb(241, 161, 252));
+ }
+ 
+ .button_home:hover #span3{
+    right: 100%;
+    transition: 1s;
+    transition-delay: 0.5s;
+ }
+ 
+ #span2{
+    top: -100%;
+    right: 0%;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent,rgb(241, 161, 252));
+ }
+ 
+ .button_home:hover #span2{
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+ }
+ 
+ #span4{
+    bottom: -100%;
+    left: 0%;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent,rgb(241, 161, 252));
+ }
+ 
+ .button_home:hover #span4{
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 0.75s;
+ }
+
+
+ .button_create{
+    position: absolute;
+    color:rgb(187, 151, 207);
+    font-size: 20px;
+    font-family: 'Tourney', cursive;
+    text-decoration: none;
+    margin-left: -150px;
+    margin-top: 30px;
+    padding: 15px 20px;
+    letter-spacing: 2px;
+    transition: 1s;
+    overflow: hidden;
+    background-color:rgba(22, 7, 14, 0.692);
+    z-index: 50;
+    border-radius: 10px;
+ }
+ 
+ .button_create:hover{
+    background: rgb(181, 28, 252);
+    box-shadow: 0 0 10px rgb(82, 21, 117),0 0 40px rgb(112, 13, 112), 0 0 80px rgb(129, 30, 196);
+    transition-delay: 1s;
+ }
+ 
+ .button_create span{
+    position: absolute;
+    display: block;
+ 
+ }
+ 
+ #span1{
+    top: 0%;
+    left: -100%;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent,rgb(241, 161, 252));
+ }
+ 
+ .button_create:hover #span1{
+    left: 100%;
+    transition: 1s;
+ }
+ 
+ #span3{
+    bottom: 0%;
+    right: -100%;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(270deg, transparent,rgb(241, 161, 252));
+ }
+ 
+ .button_create:hover #span3{
+    right: 100%;
+    transition: 1s;
+    transition-delay: 0.5s;
+ }
+ 
+ #span2{
+    top: -100%;
+    right: 0%;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent,rgb(241, 161, 252));
+ }
+ 
+ .button_create:hover #span2{
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+ }
+ 
+ #span4{
+    bottom: -100%;
+    left: 0%;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent,rgb(241, 161, 252));
+ }
+ 
+ .button_create:hover #span4{
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 0.75s;
+ }
+
+ .cont_form{
+     margin-left: 15%;
+     margin-top: 50px;
+     height: 500px;
+     width: 400px;
+     /* justify-content: center;
+     align-items: center; */
+     
+     padding: 10px 20px 10px 20px;
+
+ }
+
+ .dogs_details{
+   display: grid;
+   grid-template-columns: auto auto ;
+   background-color: transparent;
+   width: 500px;
+   height: 400px;
+   padding-top: 20px;
+ }
+
+ .input{
+ 
+      position: relative;
+      margin-left: 10px;
+      border-radius: 3px;
+      background:linear-gradient(to bottom, rgb(100, 19, 192,0.7),rgba(13, 3, 24, 0.527));
+      width: 200px;
+      height: 36px;
+      border-color: black;
+      transition: 1s;
+      font-size: 17px;
+      border-radius: 5px;
+      transition: 1s;
+      color: black;
+      
+ }
+
+.input:hover{
+   background: rgb(181, 28, 252);
+   box-shadow: 0 0 10px rgb(82, 21, 117),0 0 40px rgb(112, 13, 112), 0 0 80px rgb(129, 30, 196);
+   transition-delay: 0.2s;
+}
+
+.p{
+   font-family:   Arial, sans-serif;
+   font-size: 18px;
+   color: rgb(219, 6, 6);
+   text-shadow: 2px 2px 8px #000000;
+}
+
+ .s_temperament{
+        color:rgb(182, 129, 212);
+        font-size: 15px;
+        font-family: fantasy;
+        text-decoration: none;
+       
+        padding: 10px 10px;
+        letter-spacing: 4px;
+        transition: 0.4s;
+        overflow: hidden;
+        background:linear-gradient(to right, rgb(133, 73, 194),rgb(36, 3, 68));
+        border-radius: 7px;
+        width: 110px;
+        margin-bottom: 30px;
+     
+ }
+ .titulo_form{
+    width: 500px;
+    color:rgb(215, 197, 247);
+    font-size: 30px;
+    font-family: 'Tourney', cursive;
+    text-decoration: none;
+ }
+ 
+
+.choice{
+   font-family: monospace;
+   list-style: none;
+   width: 100px;
+   border-radius: 3px;
+   color: blanchedalmond;
+   background:linear-gradient(to right, rgb(40, 11, 70),rgb(36, 3, 68));
+   
+}
+
+.op_temper{
+   font-family: monospace;
+   width: 50px;
+   color: blanchedalmond;
+   background:linear-gradient(to right, rgb(133, 73, 194),rgb(36, 3, 68));
+   position: relative;
+   border-radius: 3px;
+   height: 20px;
+   border-color: black;
+   transition: 1s;
+   font-size: 17px;
+   border-radius: 5px;
+   transition: 1s;
+   color: black;
+}
+.titulo{
+   margin-left: 50px;
+   display:inline-block;
+   color:rgb(228, 223, 235);
+   font-size: 50px; 
+   font-family: 'Tourney', cursive;
+   letter-spacing: 4px;
+   text-shadow: 2px 2px 8px #000000;
+}
