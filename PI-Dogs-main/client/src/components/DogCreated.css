@@ -115,13 +115,13 @@
 
 
  .button_create{
-    position: absolute;
+    position: fixed;
     color:rgb(187, 151, 207);
     font-size: 20px;
     font-family: 'Tourney', cursive;
     text-decoration: none;
-    margin-left: -150px;
-    margin-top: -30px;
+    margin-left: 120px;
+    margin-top: 150px;
     padding: 15px 20px;
     letter-spacing: 2px;
     transition: 1s;
@@ -215,7 +215,7 @@
    background-color: transparent;
    width: 500px;
    height: 100px;
-   padding-top: 20px;
+   padding-top: 0px;
  }
 
  .input{
@@ -232,6 +232,7 @@
       border-radius: 5px;
       transition: 1s;
       color: black;
+      background-color: tan;
       
  }
 
@@ -249,7 +250,7 @@
 }
 
  .s_temperament{
-        color:rgb(182, 129, 212);
+        color:rgb(159, 156, 202);
         font-size: 15px;
         font-family: fantasy;
         text-decoration: none;
@@ -261,6 +262,8 @@
         border-radius: 7px;
         width: 150px;
         margin-bottom: 30px;
+        margin-top: 15px;
+        background-color:  rgba(12, 27, 75);
      
  }
  .titulo_form{
@@ -302,4 +305,9 @@
 
 .div_order{
    margin-top: 20px;
+
+}
+.choice{
+   list-style: none;
+   color: transparent;
 }
