@@ -12,10 +12,7 @@ export default function OrderBreed(){
         dispatch(filterBreed(e.target.value));
     }
 
-    const filteBreed_C = useSelector(state => state.dogs)
-    const no_dogs= ()=>{
-        return <h1 className="not_dog">You haven't created a Dog yet </h1>
-    }
+  
     return(
         <div>
         <div className="order">
