@@ -8,7 +8,7 @@ import {
     GET_DETAIL,
     ORDER_BY,
     ORDER_BY_WEIGHT,
-    UNMOUNT_ALL_BREEDS
+    ADD_DOG
   } from "../actions/types";
 
 const initialState={
@@ -50,17 +50,16 @@ export default function rootReducer(state= initialState,action){ //action(tiene 
                 };
          case FILTER_BREED:
             let filtBreed= state.all;
-            console.log(filtBreed)
+            // console.log(filtBreed)
             let createdFilter= 
             action.payload === 'allDogs'?
             filtBreed:
             action.payload === 'createdDogs'?
             filtBreed.filter((e) => e.createdInDb) :
             filtBreed.filter((e) =>!e.createdInDb)
-          
             return{
                 ...state,
-                dogs: createdFilter
+                dogs: createdFilter,
 
             };
         case GET_DETAIL:
@@ -111,7 +110,7 @@ export default function rootReducer(state= initialState,action){ //action(tiene 
                 ...state,
                filtered:stateDogs
             }
-        case 'UNMOUNT_ALL_BREEDS': 
+        case 'ADD_DOG': 
             return {
                 ...state,
                  

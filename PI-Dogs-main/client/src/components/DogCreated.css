@@ -121,7 +121,7 @@
     font-family: 'Tourney', cursive;
     text-decoration: none;
     margin-left: -150px;
-    margin-top: 30px;
+    margin-top: -30px;
     padding: 15px 20px;
     letter-spacing: 2px;
     transition: 1s;
@@ -200,12 +200,11 @@
 
  .cont_form{
      margin-left: 15%;
-     margin-top: 50px;
+     margin-top: 21px;
      height: 500px;
      width: 400px;
      /* justify-content: center;
      align-items: center; */
-     
      padding: 10px 20px 10px 20px;
 
  }
@@ -254,14 +253,13 @@
         font-size: 15px;
         font-family: fantasy;
         text-decoration: none;
-       
         padding: 10px 10px;
-        letter-spacing: 4px;
+        letter-spacing: 0.5px;
         transition: 0.4s;
         overflow: hidden;
-        background:linear-gradient(to right, rgb(133, 73, 194),rgb(36, 3, 68));
+        background:linear-gradient(to right, rgb(16, 49, 156),rgb(36, 3, 68));
         border-radius: 7px;
-        width: 110px;
+        width: 150px;
         margin-bottom: 30px;
      
  }
@@ -276,16 +274,16 @@
 
 .button_temp{
    font-family: monospace;
-   width: 110px;
+   width: 180px;
    padding: 2px 2px 2px 2px;
-   color: blanchedalmond;
-   background:linear-gradient(to right, rgb(133, 73, 194),rgb(189, 172, 206));
+   color: rgb(221, 214, 203);
+   background:linear-gradient(to right, rgb(73, 194, 174),rgb(189, 172, 206));
    position: relative;
    border-radius: 1px;
    height: 30px;
    border-color: black;
    margin-left: 5px;
-   margin-top: -25px;
+   margin-top: -5px;
    transition: 1s;
    font-size: 17px;
    border-radius: 5px;

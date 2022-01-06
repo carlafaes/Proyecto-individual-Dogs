@@ -77,7 +77,9 @@ import menu from '../img/menu.png'
                     <OrderAlfab value={setCurrentPage} set={setOrder}/>
                     </li>
                     <li className="list__item" id="word_list">
+                   
                     <OrderWeight value={setCurrentPage} set={setOrder}/>
+                   
                     </li>
                     <li key={allDogs.toString()} className="list__item" id="word_list">
                     <Temperament value={setCurrentPage}/>

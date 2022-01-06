@@ -6,7 +6,7 @@ import {
     SEARCH_BY_NAME,
     FILTER_TEMPERAMENT,
     FILTER_BREED,
-    UNMOUNT_ALL_BREEDS,
+    ADD_DOG,
     ORDER_BY,
     ORDER_BY_WEIGHT,
   } from "./types";
@@ -39,7 +39,7 @@ export function getDetails(id){
         });
     };
 };
-export const unmountAllBreeds = () => ({type: 'UNMOUNT_ALL_BREEDS'}) 
+export const addDogType = () => ({type: 'ADD_DOG'}) 
 
 export function getTemperament(){
     return async(dispatch)=>{

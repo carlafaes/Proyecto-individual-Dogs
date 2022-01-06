@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch,useSelector } from "react-redux";
 import { useState,useEffect } from "react";
-import { addDog, getTemperament,unmountAllBreeds } from "../actions/indexActions";
+import { addDog, addDogType, getTemperament } from "../actions/indexActions";
 import {Link, useNavigate} from 'react-router-dom'
 import { ValidateForm } from "./ValidateForm";
 import './DogCreated.css';
@@ -19,7 +19,7 @@ export default function DogCreated(){
     useEffect(()=>{
         dispatch(getTemperament())
         return ()=>{
-            dispatch(unmountAllBreeds())
+            dispatch(addDogType())
         }
     },[dispatch]);
 
@@ -148,7 +148,6 @@ export default function DogCreated(){
                                 <input className="input"  type='text' value={inputForm.heightMin} name='heightMin' placeholder="Enter the minimum height" onChange={(e) => { handleChange(e); } }></input>
                                 {errors.heightMin && (<p className="p">{errors.heightMin}</p>)}
                             </div>
-
                             <div >
                                 <input className="input" type='text' value={inputForm.heightMax} name='heightMax' placeholder="Enter the maximum height" onChange={(e) => { handleChange(e); } }></input>
                                 {errors.heightMax && (<p className="p">{errors.heightMax}</p>)}
@@ -171,18 +170,34 @@ export default function DogCreated(){
                             <div className="div_order">
                             <div className="temperament">
                                 <select className="s_temperament" onChange={(e) => handleSelectTemperament(e)}>
-                                    <option  value=''> Seleccione Temperamentos</option>
+                                    <option  value=''>Temperaments</option>
                                     {temperaments.map((temp) => (
                                     <option className="op_temper"  key={Math.random(temp.id)} value={temp.name}>
                                     {temp.name}
                                     </option>))}
                                 </select>
-                                {/* <ul>
+                                
+                        <div>
+                            {inputForm.temperament.map(e =>
+                             <button key={Math.random(e)} className="button_temp" onClick={() => handleDeleteTemperament(e)}>{e} 
+                             </button>
+                            )}
+                        </div>
+                                <ul>
                                     <li className="choice" >
                                         {inputForm.temperament.map(e =>  e)}
                                         
                                     </li>
-                                </ul> */}
+                                </ul>
+                            </div>
+                            <div>
+                            <button className="button_create" type='submit' onSubmit={(e) => handleSubmit(e)}>
+                            <span id='span1'></span>
+                            <span id='span2'></span>
+                            <span id='span3'></span>
+                            <span id='span4'></span> 
+                                Create Dog
+                            </button>
                             </div>
                             </div>
                          </div>
@@ -192,21 +207,9 @@ export default function DogCreated(){
                              <img className="img_create" src={perro3} alt='perro3'/>
                         </div>
                            
-                            <button className="button_create" type='submit' onSubmit={(e) => handleSubmit(e)}>
-                            <span id='span1'></span>
-                            <span id='span2'></span>
-                            <span id='span3'></span>
-                            <span id='span4'></span> 
-                                Create Dog
-                            </button>
+                      
                             
                        
-                        <div>
-                            {inputForm.temperament.map(e =>
-                             <button key={Math.random(e)} className="button_temp" onClick={() => handleDeleteTemperament(e)}>{e} 
-                             </button>
-                            )}
-                        </div>
                     </section>
                 </div></>
            
