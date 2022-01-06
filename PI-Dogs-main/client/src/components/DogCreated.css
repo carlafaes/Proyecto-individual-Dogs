@@ -274,16 +274,6 @@
  }
  
 
-.choice{
-   font-family: monospace;
-   list-style: none;
-   width: 100px;
-   border-radius: 3px;
-   color: rgb(216, 141, 29);
-   background:linear-gradient(to right, rgb(40, 11, 70),rgb(36, 3, 68));
-   
-}
-
 .button_temp{
    font-family: monospace;
    width: 110px;
