@@ -10,7 +10,8 @@ const {Temperament}= require ('../db');
         let temperament = temperamentApi.data.map(d => d.temperament ? d.temperament : "no se tiene temperamento");
         let temp2 = temperament.map(d => d.split(', '))
         let settemp = new Set (temp2.flat()) // el set quita los repetidos y el flat los saca del array
-        for (el of settemp) {if (el) await Temperament.findOrCreate({
+        for (el of settemp) {
+          if (el) await Temperament.findOrCreate({
             where: { name: el }})
       }
         temperamentoBd = await Temperament.findAll();
