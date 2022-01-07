@@ -30,6 +30,8 @@ import menu from '../img/menu.png'
 
     const currentDog= allDogs.slice(indexFirstDog,indexLastDog);
     //toma las porciones que hay en los parametros, desde el index del primer perro [0], hasta el index del ultimo perro[9],por lo que quedarian 9 dogs por pagina
+     
+   
 
     const [order,setOrder]= useState('');
 

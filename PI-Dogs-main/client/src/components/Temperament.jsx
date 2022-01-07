@@ -16,6 +16,7 @@ export default function Temperament({value}){
 return(
     <div className="order">
         <label className="list__item">Temperament</label>
+
          <select className="order_select" id='btn-order' value='temperament' onChange={e => handleFilterByTemperament(e)}>
                     <option className="order_option" >🐕‍🦺🐕</option>
                     {allTemperament && allTemperament.map((el)=>( 
@@ -25,7 +26,8 @@ return(
                     ))
                     
                     }
-         </select> 
+         </select>
+        
     </div>
 )
 }
