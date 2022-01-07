@@ -131,12 +131,12 @@ export default function DogCreated(){
                             
                             
                                 
-                                <input className="input" type='text' value={inputForm.life_spanMin} name='life_spanMin' placeholder="Enter minimum life expectancy" onChange={(e) => { handleChange(e); } }></input>
+                                <input className="input" type='text' value={inputForm.life_spanMin} name='life_spanMin' placeholder="Enter minimum life span" onChange={(e) => { handleChange(e); } }></input>
                                 {errors.life_spanMin && (<p className="p">{errors.life_spanMin}</p>)}
                             
                             
                                 
-                                <input className="input"  type='text' value={inputForm.life_spanMax} name='life_spanMax' placeholder="Enter maximum life expectancy" onChange={(e) => { handleChange(e); } }></input>
+                                <input className="input"  type='text' value={inputForm.life_spanMax} name='life_spanMax' placeholder="Enter maximum life span" onChange={(e) => { handleChange(e); } }></input>
                                 {errors.life_spanMax && (<p className="p">{errors.life_spanMax}</p>)}
                             
                             </div>
