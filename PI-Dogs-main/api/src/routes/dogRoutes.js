@@ -108,7 +108,6 @@ const reqApi= async function getApi(){
     })
            
     
-
     router.post("/dog", async (req, res) => {
         const { name, height, weight, life_span,image, createdInDb, temperament } = req.body;
         try{

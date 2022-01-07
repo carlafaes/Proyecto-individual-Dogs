@@ -1,0 +1,54 @@
+router.get('/dogs/:id', (req,res)=>{
+        const {id}=req.params;
+        Dog.findAll().then((result)=>{
+            if(result){
+                let arr=[];
+                result.map((el)=>{
+                    if(el.name === id){
+                        let info={
+                            name: el.name,
+                            height:el.height,
+                            weight:el.weight,
+                            life_span:el.life_span,
+                            image:el.image
+                        }
+                        arr.push(info)
+                    }
+                })
+                res.send(arr)
+            }
+            else{
+                res.status(404).json({error:'no existe'})
+            }
+        })
+    })
+router.get('/',(req,res)=>{
+    Temperament.sync()
+    .then(async()=>{
+        const allData= await Temperament.findAll()
+        if(allData.length > 0){
+            res.send(allData)
+        }
+        else{
+            function apiInfo(){
+                fetch(`https://api.thedogapi.com/v1/breeds?api_key=${API_KEY}`)
+                .then((data)=> data.json())
+                .then((result)=>{
+                    result.map((el)=>{
+                        Temperament.sync()
+                        .then(async()=>{
+                            const createdTemperaments=await.create(
+                                {
+                                    name:el.name
+                                }
+                            )
+                        })
+                    })
+                })
+                .catch(error){
+                    console.log(error)
+                }
+            }
+        }
+    })
+})
