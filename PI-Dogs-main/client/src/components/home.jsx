@@ -113,7 +113,8 @@ import menu from '../img/menu.png'
             </div>
 
             <div className="dogCard">
-                    {Array.isArray(currentDog) === false?
+             {console.log(currentDog)}
+                    {Array.isArray(currentDog) === false ?
                     <h1 className="not_dog">Dog not found 😞</h1>:
                     currentDog && currentDog.map((el)=>{
                        // console.log(el)
@@ -124,9 +125,9 @@ import menu from '../img/menu.png'
                             
                             name={el.name}
                             image={el.image}
-                            weight={el.weight? el.weight[0] : el.weight_min}
-                            temperament={el.temperament}
-                            temperaments={el.temperaments}
+                            weight={el.weight}
+                            temperament={!el.createdInDb? el.temperament :el.temperaments.map
+                            ((e)=> e.name)}
                             id={el.id}
                             />
                         </div>

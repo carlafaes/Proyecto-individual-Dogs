@@ -30,15 +30,24 @@ const reqApi= async function getApi(){
 
     const reqDb= async () =>{
         return await Dog.findAll({
-            include:{
-                model: Temperament,
-                attributes:{
-                    include:['name']
-                },
+
+            include:
+            {
+                model:Temperament,
+                attributes: ['name'],
                 through:{
-                    attributes:[]
-                }
-            }
+                    attributes: [],
+                },
+    
+            }            // include:{
+            //     model: Temperament,
+            //     attributes:{
+            //         include:['name']
+            //     },
+            //     through:{
+            //         attributes:[]
+            //     }
+            // }
         });
     }
   

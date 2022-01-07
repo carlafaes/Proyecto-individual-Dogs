@@ -23,7 +23,7 @@ export function getDogs(){
             });
         }
         catch(err){
-            console.logs(err);
+            console.log(err);
         }
        
     };

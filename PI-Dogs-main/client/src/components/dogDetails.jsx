@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch,useSelector } from "react-redux";
-import { getDetails, unmountAllBreeds} from "../actions/indexActions";
+import { getDetails, addDogType} from "../actions/indexActions";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router";
 import './DogDetails.css';
@@ -36,10 +36,10 @@ return(
                 <h4 >Life Span: {myDog.life_span}</h4>
                 </div>
                 <div className="info_text3" >
-                <h4>Height[cm]: {myDog.height[0]+ '-' + myDog.height[1]}</h4>
+                <h4>Height[cm]: {myDog.height}</h4>
                 </div>
                 <div className="info_text4">
-                <h4 >Weight [kg]: {myDog.weight[0]+ '-' + myDog.height[1]}</h4>
+                <h4 >Weight [kg]: {myDog.weight}</h4>
                 </div>
             </div> 
             : 
