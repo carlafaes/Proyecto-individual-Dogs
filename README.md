@@ -21,11 +21,11 @@
 
 
 <p align="center">
-  <img height="200" src="./Captur2a.PNG" />
+  <img height="200" src="./Captura.PNG" />
 </p>
 
 <p align="center">
-  <img height="200" src="./Captura.PNG" />
+  <img height="200" src="./Captur2a.PNG" />
 </p>
 
 <p align="center">
