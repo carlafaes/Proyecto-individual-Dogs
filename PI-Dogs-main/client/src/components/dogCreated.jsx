@@ -12,7 +12,7 @@ import perro3 from '../img/perro2.jpg'
 export default function DogCreated(){
     const dispatch=useDispatch();
     const history= useNavigate();
-    const temperaments= useSelector((state) => state.temperaments)
+    const temperaments= useSelector((state) => state.temperaments )
     const [errors,setErrors] = useState({}) //estado local que arranca con un obj vacio
   
    
@@ -58,7 +58,8 @@ export default function DogCreated(){
     }
 
     function handleSubmit(e){
-        e.preventDefault();
+         e.preventDefault();
+         console.log(inputForm)
         let checkErr= [];
         console.log(checkErr)
         if(inputForm.temperament.length < 1){//asegura q haya temperament

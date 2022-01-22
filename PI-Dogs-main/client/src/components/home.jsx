@@ -113,7 +113,7 @@ import menu from '../img/menu.png'
             </div>
 
             <div className="dogCard">
-             {console.log(currentDog)}
+             {/* {console.log(currentDog)} */}
                     {Array.isArray(currentDog) === false ?
                     <h1 className="not_dog">Dog not found 😞</h1>:
                     currentDog && currentDog.map((el)=>{
@@ -127,7 +127,7 @@ import menu from '../img/menu.png'
                             image={el.image}
                             weight={el.weight}
                             temperament={!el.createdInDb? el.temperament :el.temperaments.map
-                            ((e)=> e.name)}
+                            ((e)=> e.name + (', '))}
                             id={el.id}
                             />
                         </div>

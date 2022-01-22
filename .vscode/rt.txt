@@ -52,3 +52,17 @@ router.get('/',(req,res)=>{
         }
     })
 })
+
+
+let result=[]
+
+    if(state.creadoEnbase){
+      let response2 =state.filter((e)=> e.temperaments === action.payload)
+      result = [...result, response2]
+      
+    }
+    if(state.creadoEnbase === undefined){
+     let response1= state.filter((e)=> e.temperaments.name === action.payload)
+
+     result = [...result, response1]
+    }

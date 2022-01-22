@@ -17,6 +17,8 @@ export function getDogs(){
             let json= await axios.get('http://localhost:3001/dogs',{
 
             });
+            // json.data.temperaments =  json.data.temperaments.map((t) => t.name)
+            // const response= json.data.temperaments.map((t) => t.name)
             return dispatch({
                 type: GET_DOGS,
                 payload: json.data

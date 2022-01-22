@@ -36,10 +36,10 @@ return(
                 <h4 >Life Span: {myDog.life_span}</h4>
                 </div>
                 <div className="info_text3" >
-                <h4>Height[cm]: {myDog.height}</h4>
+                <h4>Height[cm]: {myDog.height[0]}- {myDog.height[1]}</h4>
                 </div>
                 <div className="info_text4">
-                <h4 >Weight [kg]: {myDog.weight}</h4>
+                <h4 >Weight [kg]: {myDog.weight[0]} - {myDog.weight[1]}</h4>
                 </div>
             </div> 
             : 

@@ -36,6 +36,7 @@ export default function rootReducer(state= initialState,action){ //action(tiene 
           return{
               ...state,
               dogs: filter,
+              
           }
            
         case GET_TEMPERAMENTS:

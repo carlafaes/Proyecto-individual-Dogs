@@ -29,17 +29,20 @@ const reqApi= async function getApi(){
     }
 
     const reqDb= async () =>{
-        return await Dog.findAll({
 
+        
+        return await Dog.findAll({
+            
             include:
             {
                 model:Temperament,
-                attributes: ['name'],
+                 attributes: ['name'],
                 through:{
                     attributes: [],
                 },
-    
-            }            // include:{
+                
+            }  
+            // include:{
             //     model: Temperament,
             //     attributes:{
             //         include:['name']
@@ -49,7 +52,12 @@ const reqApi= async function getApi(){
             //     }
             // }
         });
+        // const map= perro.map(e => e.name)
+        // console.log(map,'este es el map')
+        // return map
+        
     }
+   
   
         
 
@@ -59,6 +67,7 @@ const reqApi= async function getApi(){
             if(!name){
                const api= await reqApi();
                const db= await reqDb();
+               console.log(db, 'este es el redb')
                const allInfo= api.concat(db);
                res.status(200).send(allInfo.length ? allInfo : 'Info not found')
             }
@@ -131,11 +140,12 @@ const reqApi= async function getApi(){
             life_span,
             createdInDb
           });
-          let temperamentDb = await Temperament.findAll({
+           let temperamentDb = await Temperament.findAll({
                  where: { name : temperament }
         });
+        console.log(temperamentDb)
         dogCreated.addTemperament(temperamentDb)  
-        //  console.log(temperamentDb); 
+          console.log(temperamentDb); 
           return res.status(200).json("The dog has been successfully created");
         }
       
